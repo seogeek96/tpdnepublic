@@ -3,8 +3,17 @@ import React, { useState, useEffect } from "react";
 import HomePage from "@/components/Homepage";
 import { translations } from "@/utils/translations";
 
-export default function Home() {
-  const [selectedLanguage, setSelectedLanguage] = useState("en");
+// Define the type for the component's props
+interface LanguagePageProps {
+  params: {
+    language: string;
+  };
+}
+
+export default function LanguagePage({ params }: LanguagePageProps) {
+  // Access params.language directly
+  const language = params.language || "en";
+
   const [imageUrl, setImageUrl] = useState("");
   const [gender, setGender] = useState("male");
   const [buttonText, setButtonText] = useState("Download Image");
@@ -50,7 +59,7 @@ export default function Home() {
     setTimeout(() => setButtonText("Download Image"), 3000);
   };
   
-  // Fetch a new image whenever the language or gender changes
+
   useEffect(() => {
     fetchRandomImage(gender);
   }, [gender]);
@@ -67,7 +76,7 @@ export default function Home() {
   return (
     <div>
       <HomePage
-        language={selectedLanguage}
+        language={language}
         imageUrl={imageUrl}
         downloadImage={downloadImage}
         buttonText={buttonText}

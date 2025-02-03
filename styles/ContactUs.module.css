@@ -1,0 +1,56 @@
+.container {
+    color: white;
+    padding: 20px;
+    max-width: 600px;
+    margin: 120px auto;
+    text-align: center;
+}
+
+/* ✅ Fix: Scope h1 inside .container */
+.container h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* ✅ Fix: Scope form elements inside .form */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form label {
+    text-align: left;
+    font-weight: bold;
+    color: white;
+}
+
+/* ✅ Fix: Scope inputs and textarea */
+.form input, .form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* ✅ Fix: Scope button */
+.form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form button:hover {
+    background-color: #0056b3;
+}
