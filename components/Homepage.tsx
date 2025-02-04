@@ -16,7 +16,6 @@ const HomePage: React.FC<HomePageProps> = ({
   language,
   imageUrl,
   downloadImage,
-  buttonText,
   setGender,
   fetchRandomImage,
 }) => {

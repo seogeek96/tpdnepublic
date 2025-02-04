@@ -1,7 +1,6 @@
 "use client"; // Mark as a Client Component
 import React, { useState, useEffect } from "react";
 import HomePage from "@/components/Homepage";
-import { translations } from "@/utils/translations";
 
 export default function Home() {
   const [selectedLanguage, setSelectedLanguage] = useState("en");

@@ -1,7 +1,6 @@
 "use client"; // Mark as a Client Component
 import React, { useState, useEffect } from "react";
 import HomePage from "@/components/Homepage";
-import { translations } from "@/utils/translations";
 
 // Define the type for the component's props
 interface LanguagePageProps {

@@ -1,6 +1,5 @@
 "use client"; // Mark as a Client Component
 import React, { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import styles from "../styles/Header.module.css";
 
