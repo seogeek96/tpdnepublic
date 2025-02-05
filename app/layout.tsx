@@ -18,6 +18,7 @@ export default function RootLayout({
   const router = useRouter();
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleError = (error: any) => {
       console.error("Unexpected error:", error);
       router.push("/"); // Redirect to homepage on error

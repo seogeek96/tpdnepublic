@@ -61,7 +61,7 @@ export default function LanguagePage({ params }: LanguagePageProps) {
 
   useEffect(() => {
     fetchRandomImage(gender);
-  }, [gender]);
+  }, [gender,fetchRandomImage ]);
 
   // Clean up the blob URL when the component unmounts
   useEffect(() => {

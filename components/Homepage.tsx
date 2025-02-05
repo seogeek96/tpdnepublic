@@ -2,6 +2,7 @@
 import React from "react";
 import styles from "../styles/Homepage.module.css"; // Import the CSS Module
 import { translations } from "../utils/translations"; // Correct import path
+import Image from 'next/image';
 
 interface HomePageProps {
   language: string;
@@ -43,7 +44,7 @@ const HomePage: React.FC<HomePageProps> = ({
 
       <div className={styles.imageContainer}>
   {imageUrl ? (
-    <img
+    <Image
       src={imageUrl}
       alt="This person does not exist"
       title="This person does not exist"  

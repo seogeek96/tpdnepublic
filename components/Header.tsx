@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "../styles/Header.module.css";
+import Image from 'next/image';
 
 const Header = () => {
   const router = useRouter();
@@ -49,9 +50,10 @@ const Header = () => {
 
   return (
     <div className={styles.header}>
-      <img
+      <Image
         src="/this person does not exist logo.png"
         alt="Logo"
+        width={500} height={300}
         className={styles.logo}
         onClick={() => router.push("/")}
       />

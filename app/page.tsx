@@ -3,11 +3,10 @@ import React, { useState, useEffect } from "react";
 import HomePage from "@/components/Homepage";
 
 export default function Home() {
-  const [selectedLanguage, setSelectedLanguage] = useState("en");
+  const [selectedLanguage] = useState("en");
   const [imageUrl, setImageUrl] = useState("");
   const [gender, setGender] = useState("male");
   const [buttonText, setButtonText] = useState("Download Image");
-
   const fetchRandomImage = async (selectedGender: string) => {
     try {
       // Add a cache-busting query parameter (timestamp)
