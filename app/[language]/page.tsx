@@ -4,9 +4,7 @@ import HomePage from "@/components/Homepage";
 
 // Define the type for the component's props
 interface LanguagePageProps {
-  params: {
-    language: string;
-  };
+  params: { language: string };
 }
 
 export default function LanguagePage({ params }: LanguagePageProps) {
