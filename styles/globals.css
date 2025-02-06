@@ -98,6 +98,8 @@ body {
     .btn {
       font-size: 14px;
       padding: 6px 12px;
+      display: block; /* Ensure buttons are block-level for centering */
+
     }
   }
   
@@ -109,5 +111,7 @@ body {
     .btn {
       font-size: 12px;
       padding: 6px 10px;
+      display: block; /* Ensure buttons are block-level for centering */
+
     }
   }

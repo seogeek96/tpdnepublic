@@ -105,7 +105,7 @@
   
   /* Responsive Styles */
   @media (max-width: 768px) {
-    .buttons {
+    .btn {
       flex-direction: column;
       gap: 10px;
     }
