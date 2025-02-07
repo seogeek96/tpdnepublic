@@ -1,18 +1,17 @@
-"use client"; // Mark as a Client Component
+"use client";
 import React, { useState, useEffect, useCallback } from "react";
+import { useParams } from "next/navigation";
 import HomePage from "@/components/Homepage";
 
-// Define the type for the component's props
-interface LanguagePageProps {
-  params: { language: string };
-}
+export default function LanguagePage() {
+  const { language } = useParams();
+  const selectedLanguage = Array.isArray(language) ? language[0] : language || "en"; // Ensure it's a string
 
-export default function LanguagePage({ params }: LanguagePageProps) {
-  const language = params.language || "en";
   const [imageUrl, setImageUrl] = useState("");
   const [gender, setGender] = useState("male");
   const [buttonText, setButtonText] = useState("Download Image");
 
+  // ✅ Stable function with no unnecessary dependencies
   const fetchRandomImage = useCallback(async (selectedGender: string) => {
     try {
       const timestamp = Date.now();
@@ -23,16 +22,15 @@ export default function LanguagePage({ params }: LanguagePageProps) {
       const imageBlob = await response.blob();
       const newImageUrl = URL.createObjectURL(imageBlob);
 
-      if (imageUrl) {
-        URL.revokeObjectURL(imageUrl);
-      }
-
-      setImageUrl(newImageUrl);
+      setImageUrl((prevUrl) => {
+        if (prevUrl) URL.revokeObjectURL(prevUrl); // Clean previous image
+        return newImageUrl;
+      });
     } catch (error) {
       console.error("Error fetching image:", error);
       setImageUrl("https://via.placeholder.com/300?text=Image+Not+Found");
     }
-  }, [imageUrl]);
+  }, []); // ✅ Empty dependency array ensures function doesn't change
 
   const downloadImage = () => {
     if (!imageUrl) {
@@ -53,7 +51,8 @@ export default function LanguagePage({ params }: LanguagePageProps) {
 
   useEffect(() => {
     fetchRandomImage(gender);
-  }, [gender, fetchRandomImage]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gender]); // ✅ Only runs when gender changes
 
   useEffect(() => {
     return () => {
@@ -66,7 +65,7 @@ export default function LanguagePage({ params }: LanguagePageProps) {
   return (
     <div>
       <HomePage
-        language={language}
+        language={selectedLanguage} // Now guaranteed to be a string
         imageUrl={imageUrl}
         downloadImage={downloadImage}
         buttonText={buttonText}
