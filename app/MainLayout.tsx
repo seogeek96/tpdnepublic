@@ -23,6 +23,10 @@ export default function MainLayout({ children }: MainLayoutProps) {
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
         <link rel="apple-touch-icon" href="/favicon.png" />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2712755007538822" 
+                 crossOrigin="anonymous">
+
+      </script>
       </Head>
 
       <Script id="google-analytics">
