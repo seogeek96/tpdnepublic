@@ -2,6 +2,7 @@
 import React from "react";
 
 export interface Translation {
+  title: string;
   heading: string;
   updatedOn: string;
   downloadImage: string;

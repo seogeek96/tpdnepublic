@@ -7,8 +7,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 // ✅ Metadata definition
 export const metadata: Metadata = {
-  title: "This Person Does Not Exist",
-  description: "Random Image Generator",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
@@ -18,6 +16,8 @@ export const metadata: Metadata = {
     "google-site-verification": "noDxY7-Iw_ArIQTqmhnxSTTwPxM1R78uf9FxSnmJ_e0",
     "yandex-verification": "5424a42e25dece6b",
     "msvalidate.01": "394BAB3426D3AA6C5DF8FE0E8A95469B",
+    "bing-site-verification": "YOUR_BING_VERIFICATION_CODE_HERE" // Add this line
+
   },
 };
 

@@ -3,6 +3,7 @@ import { Translation } from "../types/index";
 
 export const translations: Record<string, Translation> = {
   en: {
+    title: "This Person Does Not Exist 2025",
     heading: "This Person Does Not Exist 2025",
     updatedOn: "Updated on",
     downloadImage: "Download Image",
@@ -34,6 +35,7 @@ export const translations: Record<string, Translation> = {
     ),
   },
   ae: {
+    title: "هذا الشخص غير موجود 2025",
     heading: "هذا الشخص غير موجود 2025",
     updatedOn: "تم التحديث بتاريخ",
     male:"ذكر",
@@ -63,6 +65,7 @@ export const translations: Record<string, Translation> = {
 
     },
     bg: {
+      title:"Това лице не съществува 2025",
       heading:"Това лице не съществува 2025",
       updatedOn: "Актуализирано на",
       downloadImage: "изтегляне на изображение",
@@ -109,6 +112,7 @@ export const translations: Record<string, Translation> = {
     </>
     },  
     ru: {
+      title:"Этого человека не существует 2025",
       heading:"Этого человека не существует 2025",
       updatedOn: "Обновлено на",
       downloadImage: "скачать изображение",
@@ -155,6 +159,7 @@ export const translations: Record<string, Translation> = {
     </>
     },
   es: {
+    title:"Esta persona no existe 2025",
     heading: "Esta persona no existe 2025",
     updatedOn: "Actualizado el",
     downloadImage: "Descargar Imagen",
@@ -200,7 +205,8 @@ export const translations: Record<string, Translation> = {
     </>
   },
   it:{
-    heading:"Questa persona non esiste 2025.",
+    title:"Questa persona non esiste 2025",
+    heading:"Questa persona non esiste 2025 ",
     updatedOn: "Aggiornato il",
     male:"maschio",
     female:"femmina",
@@ -246,6 +252,7 @@ export const translations: Record<string, Translation> = {
   </>
   },
   fr:{
+    title:"Cette personne n'existe pas 2025",
     heading:"Cette personne n'existe pas 2025.",
     updatedOn: "Mis à jour le",
     male: "mâle",
@@ -290,7 +297,8 @@ export const translations: Record<string, Translation> = {
   </>
   },
   tr:{
-    heading:"Bu Kişi Mevcut Değil 2025.",
+    title:"Bu Kişi Mevcut Değil 2025",
+    heading:"Bu Kişi Mevcut Değil 2025",
     updatedOn: "Güncellenme tarihi",
     male:"erkek",
     female:"dişi",
@@ -334,6 +342,7 @@ export const translations: Record<string, Translation> = {
   </>
   },
   ro:{
+    title:"Această persoană nu există 2025",
     heading:"Această persoană nu există 2025",
     updatedOn: "Actualizat la",
     male: "bărbat",
@@ -378,7 +387,8 @@ export const translations: Record<string, Translation> = {
     </>
   },
   cn:{
-    heading:"此人不存在 2025.",
+    title:"此人不存在 2025",
+    heading:"此人不存在 2025",
     updatedOn: "更新于",
     male: "男性",
     female:"男性",
@@ -424,7 +434,8 @@ export const translations: Record<string, Translation> = {
     </>
   },
   sv:{
-    heading:"Denna person existerar inte 2025.",
+    title:"Denna person existerar inte 2025",
+    heading:"Denna person existerar inte 2025",
     updatedOn: "Uppdaterad den",
     male: "manlig",
     female:"kvinnlig",
@@ -469,7 +480,8 @@ export const translations: Record<string, Translation> = {
   </>
   },
   ua:{
-    heading:"Цієї людини не існує 2025.",
+    title:"Цієї людини не існує 2025",
+    heading:"Цієї людини не існує 2025",
     updatedOn: "Оновлено на",
     male: "чоловічий",
     female:"жіноча",
@@ -514,7 +526,8 @@ export const translations: Record<string, Translation> = {
   </>
   },
   gr:{
-    heading:"Αυτό το άτομο δεν υπάρχει 2025.",
+    title:"Αυτό το άτομο δεν υπάρχει 2025",
+    heading:"Αυτό το άτομο δεν υπάρχει 2025",
     updatedOn: "Ενημερώθηκε στις",
     male: "Ααρσενικός",
     female:"θηλυκός",
@@ -560,7 +573,8 @@ export const translations: Record<string, Translation> = {
   </>
   },
   id:{
-    heading:"Orang Ini Tidak Ada 2025.",
+    title:"Orang Ini Tidak Ada 2025",
+    heading:"Orang Ini Tidak Ada 2025",
     updatedOn: "Diperbarui pada",
     male: "pria",
     female:"perempuan",
@@ -606,6 +620,7 @@ export const translations: Record<string, Translation> = {
   </>
   },
   no:{
+    title:"Denne personen eksisterer ikke 2025",
     heading:"Denne personen eksisterer ikke 2025",
     updatedOn: "Oppdatert den",
     male: "mann",
@@ -652,7 +667,8 @@ export const translations: Record<string, Translation> = {
   </>
   },
   jp:{
-    heading:"この人物は存在しない 2025.",
+    title:"この人物は存在しない 2025",
+    heading:"この人物は存在しない 2025",
     updatedOn: "更新日",
     male:"男",
     female: "女性",
@@ -697,7 +713,8 @@ export const translations: Record<string, Translation> = {
   </>
   },
   nl:{
-    heading:"Deze persoon bestaat niet 2025.",
+    title:"Deze persoon bestaat niet 2025",
+    heading:"Deze persoon bestaat niet 2025",
     updatedOn: "Bijgewerkt op",
     male: "mannelijk",
     female:"vrouwelijk",
@@ -741,6 +758,7 @@ export const translations: Record<string, Translation> = {
     </>
   },
   si:{
+    title:"Ta oseba ne obstaja 2025",
     heading:"Ta oseba ne obstaja 2025.",
     updatedOn: "Posodobljeno na",
     male: "mužský",
@@ -787,7 +805,8 @@ export const translations: Record<string, Translation> = {
     </>
   },
   et:{
-    heading:"Seda isikut ei ole olemas 2025.",
+    title:"Seda isikut ei ole olemas 2025",
+    heading:"Seda isikut ei ole olemas 2025",
     updatedOn: "Uuendatud kuupäeval",
       male: "meessoost",
       female:"naissoost",
@@ -831,7 +850,8 @@ export const translations: Record<string, Translation> = {
 </>
     },
   pl:{
-    heading:"Ta osoba nie istnieje 2025.",
+    title:"Ta osoba nie istnieje 2025",
+    heading:"Ta osoba nie istnieje 2025",
     updatedOn: "Aktualizowano",
     male: "Mężczyzna",
     female:"Kobieta",
@@ -877,6 +897,7 @@ export const translations: Record<string, Translation> = {
   </>
   }, 
   kr:{
+    title:"이 사람은 존재하지 않습니다 2025",
     heading:"이 사람은 존재하지 않습니다 2025.",
     updatedOn: "업데이트된 날짜",
     male:"남성",
@@ -923,7 +944,8 @@ export const translations: Record<string, Translation> = {
   </>
   },
   de:{
-    heading:"Diese Person gibt es nicht 2025.",
+    title:"Diese Person gibt es nicht 2025",
+    heading:"Diese Person gibt es nicht 2025",
     updatedOn: "Aktualisiert am",
     male: "männlich",
     female:"weiblich",
@@ -968,7 +990,8 @@ export const translations: Record<string, Translation> = {
   </>
   },
   fi:{
-    heading:"Tätä henkilöä ei ole olemassa 2025.",
+    title:"Tätä henkilöä ei ole olemassa 2025",
+    heading:"Tätä henkilöä ei ole olemassa 2025",
       updatedOn: "Päivitetty",
       male: "uros",
       female:"naaras",
@@ -1013,7 +1036,8 @@ export const translations: Record<string, Translation> = {
 </>
     },
 br:{
-  heading:"Esta pessoa não existe 2025.",
+  title:"Esta pessoa não existe 2025",
+  heading:"Esta pessoa não existe 2025",
   updatedOn: "Atualizado em",
   male:"macho",
   female: "fêmea",
