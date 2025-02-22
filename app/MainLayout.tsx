@@ -2,7 +2,6 @@
 
 import React from "react";
 import Head from "next/head";
-import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { usePathname } from "next/navigation";
