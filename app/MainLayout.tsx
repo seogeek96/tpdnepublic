@@ -23,20 +23,26 @@ export default function MainLayout({ children }: MainLayoutProps) {
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
         <link rel="apple-touch-icon" href="/favicon.png" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2712755007538822" 
-                 crossOrigin="anonymous">
-
-      </script>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2712755007538822"
+          crossOrigin="anonymous"
+        ></script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-ZDCNLMEHNR"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-ZDCNLMEHNR');
+            `,
+          }}
+        />
       </Head>
-
-      <Script id="google-analytics">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-ZDCNLMEHNR');
-        `}
-      </Script>
 
       <div className="layoutContainer">
         <Header />
