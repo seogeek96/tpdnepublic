@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import Head from "next/head";
+import Script from "next/script";
 import "@/styles/globals.css";
 import MainLayout from "./MainLayout";
 
@@ -25,6 +27,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://thispersondoesnotexist.cc",
+    title: "This Person Does Not Exist - AI-Generated Faces",
+    description: "Explore AI-generated faces and fake person images. Perfect for design tools and creative projects.",
     images: [
       {
         url: "https://thispersondoesnotexist.cc/og-image.png",
@@ -36,6 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    title: "This Person Does Not Exist - AI-Generated Faces",
+    description: "Explore AI-generated faces and fake person images. Perfect for design tools and creative projects.",
     images: ["https://thispersondoesnotexist.cc/og-image.png"],
   },
   other: {
@@ -49,6 +55,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        {/* Load AdSense script directly in the head */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2712755007538822"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
+      
       <body className={inter.className}>
         <MainLayout>{children}</MainLayout>
       </body>
