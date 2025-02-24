@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import Head from "next/head";
-import Script from "next/script";
 import "@/styles/globals.css";
 import MainLayout from "./MainLayout";
 
@@ -62,8 +60,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2712755007538822"
           crossOrigin="anonymous"
         ></script>
+
+        {/* Dynamically set canonical URL */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              const canonicalUrlElement = document.getElementById('canonical-url');
+              if (canonicalUrlElement) {
+                const { canonicalUrl } = JSON.parse(canonicalUrlElement.textContent);
+                const link = document.createElement('link');
+                link.rel = 'canonical';
+                link.href = canonicalUrl;
+                document.head.appendChild(link);
+              }
+            `,
+          }}
+        />
       </head>
-      
+
       <body className={inter.className}>
         <MainLayout>{children}</MainLayout>
       </body>

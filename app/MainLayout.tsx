@@ -17,7 +17,6 @@ export default function MainLayout({ children }: MainLayoutProps) {
 
   return (
     <>
-
       {/* Use next/script for Google Analytics */}
       <Script
         strategy="afterInteractive"
@@ -38,11 +37,18 @@ export default function MainLayout({ children }: MainLayoutProps) {
 
       <div className="layoutContainer">
         <Header />
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
         <Footer />
       </div>
+
+      {/* Pass canonicalUrl to RootLayout */}
+      <script
+        type="application/json"
+        id="canonical-url"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({ canonicalUrl }),
+        }}
+      />
     </>
   );
 }
