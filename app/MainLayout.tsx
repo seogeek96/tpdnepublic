@@ -2,6 +2,7 @@
 
 import React from "react";
 import Head from "next/head";
+import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { usePathname } from "next/navigation";
@@ -22,26 +23,31 @@ export default function MainLayout({ children }: MainLayoutProps) {
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
         <link rel="apple-touch-icon" href="/favicon.png" />
+        {/* Load Google AdSense script directly in the Head */}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2712755007538822"
           crossOrigin="anonymous"
         ></script>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-ZDCNLMEHNR"
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-ZDCNLMEHNR');
-            `,
-          }}
-        />
       </Head>
+
+      {/* Use next/script for other scripts like Google Analytics */}
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-ZDCNLMEHNR"
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZDCNLMEHNR');
+          `,
+        }}
+      />
 
       <div className="layoutContainer">
         <Header />
