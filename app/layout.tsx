@@ -13,6 +13,8 @@ export const viewport: Viewport = {
 
 // ✅ Metadata definition
 export const metadata: Metadata = {
+  title: "This Person Does Not Exist - AI-Generated Faces",
+  description: "Explore AI-generated faces and fake person images. Perfect for design tools and creative projects.",
   keywords: ["AI-generated faces", "fake person", "AI images", "design tools"],
   icons: {
     icon: "/favicon.png",
