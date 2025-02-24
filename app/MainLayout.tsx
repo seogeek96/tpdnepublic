@@ -23,7 +23,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
         <meta name="robots" content="index, follow" />
         <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
         <link rel="apple-touch-icon" href="/favicon.png" />
-        {/* Load Google AdSense script directly in the Head */}
+        {/* Load AdSense script directly in the head */}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2712755007538822"
@@ -31,7 +31,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
         ></script>
       </Head>
 
-      {/* Use next/script for other scripts like Google Analytics */}
+      {/* Use next/script for Google Analytics */}
       <Script
         strategy="afterInteractive"
         src="https://www.googletagmanager.com/gtag/js?id=G-ZDCNLMEHNR"
@@ -51,7 +51,27 @@ export default function MainLayout({ children }: MainLayoutProps) {
 
       <div className="layoutContainer">
         <Header />
-        <main>{children}</main>
+        <main>
+          {/* Example Ad Unit */}
+          <div style={{ margin: "20px 0", textAlign: "center" }}>
+            <ins
+              className="adsbygoogle"
+              style={{ display: "block" }}
+              data-ad-client="ca-pub-2712755007538822"
+              data-ad-slot="1234567890"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+                `,
+              }}
+            />
+          </div>
+          {children}
+        </main>
         <Footer />
       </div>
     </>
