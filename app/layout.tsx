@@ -54,8 +54,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-         {/* Load AdSense script directly in the head */}
-         <script
+        {/* Load AdSense script directly in the head */}
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2712755007538822"
           crossOrigin="anonymous"
