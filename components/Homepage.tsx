@@ -42,24 +42,45 @@ const HomePage: React.FC<HomePageProps> = ({
         </button>
       </div>
 
+      {/* Ad Container */}
+      <div className={styles.adContainer}>
+        <ins
+          className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-2712755007538822"
+          data-ad-slot="1234567890"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            `,
+          }}
+        />
+      </div>
+
+      {/* Image Container */}
       <div className={styles.imageContainer}>
-  {imageUrl ? (
-    <Image
-      src={imageUrl}
-      alt="This person does not exist"
-      title="This person does not exist"  
-      className={styles.image}
-      width={600}
-      height={400}
-      data-nimg="1"
-      onError={(e) => {
-        e.currentTarget.src = "https://via.placeholder.com/300?text=Image+Not+Found";
-      }}
-    />
-  ) : (
-    <div className={styles.skeleton}></div> // Skeleton loader
-  )}
-</div>
+        {imageUrl ? (
+          <Image
+            src={imageUrl}
+            alt="This person does not exist"
+            title="This person does not exist"
+            className={styles.image}
+            width={600}
+            height={400}
+            priority={true} // Preload the image for better LCP
+            loading="eager" // Load the image immediately
+            onError={(e) => {
+              e.currentTarget.src = "https://via.placeholder.com/300?text=Image+Not+Found";
+            }}
+          />
+        ) : (
+          <div className={styles.skeleton}></div> // Skeleton loader
+        )}
+      </div>
 
       <div className={styles.downloadButton}>
         <button className={styles.btn} onClick={downloadImage}>

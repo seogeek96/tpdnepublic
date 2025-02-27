@@ -21,6 +21,7 @@ body {
   }
   .layout-container {
     display: flex;
+    text-align: center; /* Center-align text if needed */
     flex-direction: column;
     min-height: 100vh; /* Make sure it takes up the full viewport height */
   }
@@ -35,7 +36,7 @@ body {
     margin-bottom: 20px; /* Space below paragraphs */
     line-height: 1.8; /* Adjust line spacing for better readability */
     text-align: left; /* Center align paragraphs */
-  font-size: medium;
+  font-size: large;
   
  
   }
@@ -105,7 +106,7 @@ body {
   
   @media (max-width: 600px) {
     p {
-      font-size: 0.9em;
+      font-size: 1.0em;
     }
   
     .btn {
