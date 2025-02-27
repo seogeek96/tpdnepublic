@@ -19,7 +19,7 @@ body {
     margin: 0 auto; /* Center the app */
     box-sizing: border-box; /* Ensure padding is included in the width */
   }
-  .layout-container {
+  .layout-Container {
     display: flex;
     text-align: center; /* Center-align text if needed */
     flex-direction: column;

@@ -35,7 +35,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
         }}
       />
 
-      <div className="layoutContainer">
+      <div className="layout-Container">
         <Header />
         <main>{children}</main>
         <Footer />

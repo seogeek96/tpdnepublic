@@ -2,8 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import MainLayout from "./MainLayout";
+import Script from "next/script";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 // ✅ Viewport definition
 export const viewport: Viewport = {
@@ -54,15 +55,38 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* Load AdSense script directly in the head */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2712755007538822"
-          crossOrigin="anonymous"
-        ></script>
+        {/* Preload critical fonts for faster rendering */}
+        <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
 
-        {/* Dynamically set canonical URL */}
-        <script
+        {/* Inline critical CSS to prevent render-blocking */}
+        <style>
+          {`
+            body {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              min-height: 100vh;
+              text-align: center;
+              margin: 0;
+              font-family: ${inter.className}, sans-serif;
+            }
+          `}
+        </style>
+      </head>
+
+      <body>
+        <MainLayout>{children}</MainLayout>
+
+        {/* ✅ Defer non-critical scripts */}
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2712755007538822"
+          strategy="lazyOnload"
+          crossOrigin="anonymous"
+        />
+
+        <Script
+          id="canonical-script"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               const canonicalUrlElement = document.getElementById('canonical-url');
@@ -76,10 +100,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             `,
           }}
         />
-      </head>
-
-      <body className={inter.className}>
-        <MainLayout>{children}</MainLayout>
       </body>
     </html>
   );

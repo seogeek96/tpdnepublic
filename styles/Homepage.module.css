@@ -73,6 +73,8 @@
     padding: 0 10px;
     margin: 20px auto; /* Center images */
     border-radius: 10px; /* Optional: Add rounded corners */
+    aspect-ratio: 16/9;
+
   }
   
   /* Locally scoped class for images */
