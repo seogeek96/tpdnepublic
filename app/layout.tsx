@@ -58,6 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Preload critical fonts for faster rendering */}
         <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
 
+        {/* Inline critical CSS to prevent render-blocking */}
         <style>
           {`
             body {
@@ -65,51 +66,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               justify-content: center;
               align-items: center;
               min-height: 100vh;
+              text-align: center;
               margin: 0;
               font-family: ${inter.className}, sans-serif;
-              background: linear-gradient(0deg, rgba(2,0,36,1) 70%, rgb(53, 8, 104) 90%);
-              color: white;
-            }
-            .content-container {
-              width: 100%;
-              padding: 20px;
-              margin: 0 auto;
-            }
-            .ad-container {
-              margin: 30px auto;
-              padding: 15px;
-              text-align: center;
-              border: 1px solid #f7e709;
-              border-radius: 8px;
             }
           `}
         </style>
-
       </head>
 
       <body>
-      <MainLayout>
-          <div className="content-container">
-            {children}
-            
-            
-          </div>
-        </MainLayout>
+        <MainLayout>{children}</MainLayout>
 
         {/* ✅ Defer non-critical scripts */}
         <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2712755007538822"
           strategy="lazyOnload"
           crossOrigin="anonymous"
-        />
-      <Script
-          id="ad-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (adsbygoogle = window.adsbygoogle || []).push({});
-            `,
-          }}
         />
 
         <Script
