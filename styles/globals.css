@@ -9,8 +9,6 @@ body {
   align-items: center;
   min-height: 100vh;
   background-color: #000;
-  margin-left: 100px;
-  margin-right: 100px;
 }
 
 .App {
@@ -18,7 +16,10 @@ body {
   width: 100%;
   padding: 20px;
   margin: 0 auto; /* Center the app */
-  box-sizing: border-box; /* Ensure padding is included in the width */
+  box-sizing: border-box;
+  /* Add side margins for content */
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .layout-Container {
   display: flex;
