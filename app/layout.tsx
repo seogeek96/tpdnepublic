@@ -95,17 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="content-container">
             {children}
             
-            {/* Ad Container */}
-            <div className="ad-container">
-              {/* Google AdSense Example */}
-              <ins className="adsbygoogle"
-                style={{ display: 'block' }}
-                data-ad-client="ca-pub-2712755007538822"
-                data-ad-slot="1234567890"
-                data-ad-format="auto"
-                data-full-width-responsive="true">
-              </ins>
-            </div>
+            
           </div>
         </MainLayout>
 
