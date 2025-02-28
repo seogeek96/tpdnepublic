@@ -4,7 +4,6 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(0deg, rgba(2,0,36,1) 70%, rgb(53, 8, 104) 90%);
   color: white;
-  display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -24,6 +23,7 @@ body {
 .layout-Container {
   display: flex;
   text-align: center; /* Center-align text if needed */
+  justify-content: center;
   flex-direction: column;
   min-height: 100vh; /* Make sure it takes up the full viewport height */
 }
