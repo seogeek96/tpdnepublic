@@ -71,7 +71,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               color: white;
             }
             .content-container {
-              max-width: 600px;
               width: 100%;
               padding: 20px;
               margin: 0 auto;
@@ -82,8 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               text-align: center;
               border: 1px solid #f7e709;
               border-radius: 8px;
-              max-width: 600px;
-              width: 100%;
+              width: 1080px;
             }
           `}
         </style>
