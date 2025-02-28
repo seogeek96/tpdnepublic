@@ -64,6 +64,7 @@
     transition: background-color 0.3s, border-color 0.3s;
     background-color: rgb(8, 8, 8);
     color: rgb(241, 245, 245);
+    gap: 150px;
     text-decoration: none; /* Remove underline from links */
   }
   
