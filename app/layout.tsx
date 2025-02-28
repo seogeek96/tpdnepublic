@@ -81,7 +81,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               text-align: center;
               border: 1px solid #f7e709;
               border-radius: 8px;
-              width: 1080px;
             }
           `}
         </style>

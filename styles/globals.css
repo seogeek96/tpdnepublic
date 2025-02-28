@@ -16,8 +16,7 @@ body {
   margin: 0 auto; /* Center the app */
   box-sizing: border-box;
   /* Add side margins for content */
-  margin-left: 20px;
-  margin-right: 20px;
+ 
 }
 .layout-Container {
   display: flex;
