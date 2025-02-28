@@ -32,6 +32,19 @@ const HomePage: React.FC<HomePageProps> = ({
       <h1 className={styles.heading}>{content.heading}</h1>
       <p className={styles.paragraph}>{content.updatedOn}: January 16th, 2025</p>
       <p className={styles.paragraph}>{content.description}</p>
+ 
+      <div className={styles.borderBox}>
+  You can say thank you by upvoting and commenting on this{" "}
+  <a
+    href="https://www.reddit.com/r/thispersondonotexist/" // Replace with your actual Reddit link
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.link} // Use the CSS class
+  >
+    Reddit
+  </a>{" "}
+  post.
+</div>
 
       <div className={styles.buttons}>
         <button className={styles.btn} onClick={() => handleGenderChange("male")}>
