@@ -10,9 +10,9 @@ body {
   align-items: center;
   background-color: #000;
   overflow-x: hidden;
-  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
 }
 
+/* Main container structure */
 .layout-Container {
   width: 100%;
   max-width: 1080px;
@@ -20,166 +20,156 @@ body {
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  padding: 15px;
+  padding: 20px;
   box-sizing: border-box;
 }
 
 .App {
   width: 100%;
   max-width: 1080px;
-  padding: 15px;
+  padding: 20px;
   margin: 0 auto;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Mobile-First Typography */
-h1, h2, h3 {
-  margin: 0 0 1.2rem;
-  line-height: 1.2;
-  text-align: center;
+/* Universal centering */
+h1, h2, h3, p {
   width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
 }
 
 h3 {
-  font-size: 1.3rem;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
 }
 
 p {
-  margin: 0.8rem 0;
-  line-height: 1.5;
-  text-align: center;
-  font-size: 1rem;
-  width: 100%;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 1rem auto;
+  max-width: 800px;
 }
 
-/* Responsive Buttons */
+/* Buttons */
 .btn {
-  display: block;
-  width: 100%;
-  max-width: 280px;
-  padding: 0.8rem;
-  font-size: 1rem;
+  padding: 12px 24px;
+  font-size: 1.1rem;
   border: 2px solid #f7e709;
-  border-radius: 5px;
-  margin: 0.8rem auto;
-  transition: transform 0.2s ease;
+  border-radius: 6px;
+  margin: 15px auto;
+  width: auto;
+  min-width: 200px;
+  transition: all 0.3s ease;
 }
 
-.btn:active {
-  transform: scale(0.98);
-}
-
-/* Mobile-Optimized Dropdown */
+/* Dropdown */
 .dropdown {
   position: relative;
-  width: 100%;
-  max-width: 280px;
-  margin: 0 auto;
+  display: inline-block;
+  margin: 15px auto;
 }
 
 .dropdown-content {
-  position: absolute;
   width: 100%;
-  box-sizing: border-box;
+  min-width: 200px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-/* Enhanced Responsive Breakpoints */
-@media (min-width: 480px) {
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.75rem; }
-  h3 { font-size: 1.5rem; }
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .layout-Container, .App {
+    max-width: 90%;
+    padding: 15px;
+  }
   
-  p {
-    font-size: 1.1rem;
-    text-align: justify;
-  }
-
-  .btn {
-    padding: 0.9rem 1.2rem;
-    font-size: 1.1rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .layout-Container,
-  .App {
-    padding: 20px;
-  }
-
   h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.9rem; }
-  h3 { font-size: 1.6rem; }
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.5rem; }
+}
+
+@media (max-width: 768px) {
+  .layout-Container, .App {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  h1 { 
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+    padding: 0 10px;
+  }
+
+  h2 { 
+    font-size: 1.5rem;
+    padding: 0 10px;
+  }
 
   p {
-    font-size: 1.15rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    padding: 0 10px;
+    line-height: 1.5;
   }
 
   .btn {
-    max-width: 300px;
-    padding: 1rem 1.5rem;
-  }
-
-  .dropdown {
-    max-width: 300px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    min-width: 180px;
   }
 }
 
-@media (min-width: 1024px) {
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2.2rem; }
-  h3 { font-size: 1.8rem; }
-
-  p {
-    font-size: 1.2rem;
-  }
-
-  .btn {
-    max-width: 320px;
-    padding: 1.1rem 1.8rem;
-  }
-}
-
-/* Special Mobile Considerations */
-@media (max-width: 480px) and (orientation: portrait) {
-  .layout-Container,
-  .App {
+@media (max-width: 480px) {
+  .layout-Container, .App {
     padding: 10px;
   }
 
-  h1 {
+  h1 { 
     font-size: 1.6rem;
     margin-bottom: 1rem;
   }
 
+  h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.1rem; }
+
   p {
     font-size: 0.95rem;
-    text-align: left;
+    line-height: 1.4;
   }
 
   .btn {
     font-size: 0.95rem;
-    padding: 0.7rem;
+    padding: 8px 16px;
+    min-width: 160px;
+  }
+
+  .dropdown-content {
+    min-width: 160px;
   }
 }
 
-/* Touch target optimization */
-@media (pointer: coarse) {
-  .btn {
-    min-height: 44px;
-    padding: 1rem;
-  }
-  
-  .dropdown-content p {
-    padding: 15px;
-    min-height: 44px;
-  }
+/* Special alignment fixes */
+.imageContainer {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.downloadButton {
+  margin: 25px auto;
 }
