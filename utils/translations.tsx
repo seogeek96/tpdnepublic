@@ -10,7 +10,7 @@ export const translations: Record<string, Translation> = {
     male: "Male",
     female: "Female",
     description:
-      "Discover the power of AI with our AI Image Generator of Faces! Our AI image generator uses generative adversarial networks, computer vision, machine learning algorithms, and deep learning algorithms. Our latest technology can create realistic images of fake faces. Create a variety of different facial expressions with our AI image generator.",
+      "This person does not exist is an AI Image Generator of Faces. Our AI image generator uses generative adversarial networks, computer vision, machine learning algorithms, and deep learning algorithms. Our latest technology can create realistic images of fake faces. Create a variety of different facial expressions with our AI image generator.",
     content: (
       <>
        <h2>This Person Does Not Exist – Random Photo Face Generator</h2>
@@ -29,6 +29,34 @@ export const translations: Record<string, Translation> = {
     <p>GAN uses two models: generator and discriminator work together to create new fake faces. The generator uses samples, which in our case is a person that does not exist. The discriminator identifies it based on provided information and whether it is real, fake, and has correct attributes.</p>
     <p>In simple words, the generator creates fake profile pictures, whereas the discriminator checks whether it is a fake or real image.</p>
     <p>The competition between these two produces new and unique fake face images that are presented on thispersondoesnotexist. Every image is unique once you click the refresh button.</p>
+    <p>In 2020, it was hard to believe that AI could generate such realistic images of humans. Some people believed that these were real people. As time passed, it is more evident that AI has developed a deeper understanding of human faces and can generate fake faces of male and female human beings. Although these fake image portraits are not real, this misconception has vanished.</p>
+    <p>For easier understanding of GAN, the algorithm that develops these images. Consider two machines competing to develop a better face image than the other and generate tens and hundreds of images on a single request. </p>
+    <p>When competing initially, both machines generate images with flaws. But due to competition, these images become more and more human like with better facial features like nose, eyes, hairs, ears, lips, teeth, chine, eyebrows, background, and overall face structure. </p>
+    <p>Initially Nvidia developed fake face software to understand human faces and differentiate between several face elements. This way, they wanted to store facial recognition data, develop systems to detect fake faces from general people, and detect unnatural behaviour. Since the algorithms were open source, this led to the development of this person does not exist.  </p>
+    <p>Over time, we have improved this person does not exist com and make face images clear, removed flaws and errors. You can see various examples of mistakes that previous models made. </p>
+    <p>
+  <a href="https://thispersondoesnotexist.cc" target="_blank">Thispersondoesnotexist.cc</a> has better filters. We generate random faces that are better than previous versions available online.</p>
+  <h3>Get Desired Random Face Generator Image</h3>
+<p>Sometimes, due to a large number of requests, loading takes 2-3 seconds. You can select your gender preference and reload to get desired images. The generator creates a new image on each refresh/page reload.</p>
+
+<h3>Can People Recognize Fake Face Images?</h3>
+<p>It is almost impossible to detect AI-generated faces. This is only possible with focus on very minute details. Unless a human eye looks for tiny granular irregularities, i.e., details like dots in unusual places or color inconsistencies, it is hard to detect.</p>
+
+<p>With advancements in AI, several websites have emerged that can detect whether pictures and videos are real or AI-generated. Such tools can easily detect AI images. However, the normal human eye can hardly identify it unless major flaws appear, making it obvious.</p>
+
+<p>Research was conducted to detect deepfake images by humans in the UK. It was published in the Journal of Cybersecurity. According to the research, AI image detection accuracy by humans is 62%. It varies from 30% to 85%. The research concluded that ordinary humans can’t easily identify deepfake images.</p>
+
+<h3>Flaws In AI-Generated Images</h3>
+<p>If images have faults, they can be detected easily. We have attached some examples from previous versions below.</p>
+
+
+<p>AI-generated images usually have certain errors, like water splash-like patches. Similarly, images are cut off unusually with certain lines distorting them. Often, a new incomplete face starts at the side of the image. Other errors include unusual patches and bright colors.</p>
+
+<h3>AI Face & Fake Images Detection Tools - Recent Developments</h3>
+<p>Recently, various websites have started providing free tools to detect whether the image is AI-generated or not. These can be useful for someone looking to get a deeper understanding of "This Person Does Not Exist" and the algorithms behind it.</p>
+
+<p>Some websites that provide free AI face detection tools include AIorNot.com, hivemoderation.com, and realitydefender.com. Other websites have created free tools to help you distinguish between real and fake faces. One such website is WhichFaceIsReal.com. All of these websites use StyleGAN, developed by <a href="https://nvidia.com" target="_blank">NVIDIA</a>, which led to the development of "This Person Does Not Exist."</p>
+
     <h3>Conclusion</h3>
     <p>In a hurry? The next time you’re in need of a fake face, consider using thispersondoesnotexist.cc to create the perfect fake face for your project.</p>
       </>
