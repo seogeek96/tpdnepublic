@@ -34,8 +34,17 @@ export const translations: Record<string, Translation> = {
     <p>When competing initially, both machines generate images with flaws. But due to competition, these images become more and more human like with better facial features like nose, eyes, hairs, ears, lips, teeth, chine, eyebrows, background, and overall face structure. </p>
     <p>Initially Nvidia developed fake face software to understand human faces and differentiate between several face elements. This way, they wanted to store facial recognition data, develop systems to detect fake faces from general people, and detect unnatural behaviour. Since the algorithms were open source, this led to the development of this person does not exist.  </p>
     <p>Over time, we have improved this person does not exist com and make face images clear, removed flaws and errors. You can see various examples of mistakes that previous models made. </p>
+    <div className="conclusion-image">
+          {/* Use regular img tag instead of Next.js Image */}
+          <img
+            src="/this-person-does-not-exist.webp"
+            alt="this-person-does-not-exist"
+            className="conclusion-img"
+            loading="lazy"
+          />
+        </div>
     <p>
-  <a href="https://thispersondoesnotexist.cc" target="_blank">Thispersondoesnotexist.cc</a> has better filters. We generate random faces that are better than previous versions available online.</p>
+<a href="https://thispersondoesnotexist.cc" target="_blank">Thispersondoesnotexist.cc</a> has better filters. We generate random faces that are better than previous versions available online.</p>
   <h3>Get Desired Random Face Generator Image</h3>
 <p>Sometimes, due to a large number of requests, loading takes 2-3 seconds. You can select your gender preference and reload to get desired images. The generator creates a new image on each refresh/page reload.</p>
 
@@ -48,7 +57,15 @@ export const translations: Record<string, Translation> = {
 
 <h3>Flaws In AI-Generated Images</h3>
 <p>If images have faults, they can be detected easily. We have attached some examples from previous versions below.</p>
-
+<div className="conclusion-image">
+          {/* Use regular img tag instead of Next.js Image */}
+          <img
+            src="/this-person-does-not-exist-com.webp"
+            alt="this-person-does-not-exist-com"
+            className="conclusion-img"
+            loading="lazy"
+          />
+        </div>
 
 <p>AI-generated images usually have certain errors, like water splash-like patches. Similarly, images are cut off unusually with certain lines distorting them. Often, a new incomplete face starts at the side of the image. Other errors include unusual patches and bright colors.</p>
 

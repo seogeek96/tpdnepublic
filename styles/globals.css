@@ -18,7 +18,7 @@ body {
 /* Desktop First Layout (1440-1201px) */
 .layout-Container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1080px;
   min-height: 100vh;
   padding: 40px;
   margin: 0 auto;
@@ -37,6 +37,16 @@ body {
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+}
+.conclusion-img {
+  width: 100%;
+  max-width: 600px;
+  max-height: 400px;
+  height: auto;
+  margin: 1rem auto;
+  border: 2px solid #111111;
+  border-radius: 8px;
+  display: block;
 }
 
 /* Large Desktop (1200px) */
