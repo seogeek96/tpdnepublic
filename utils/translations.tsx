@@ -44,7 +44,7 @@ export const translations: Record<string, Translation> = {
           />
         </div>
     <p>
-<a href="https://thispersondoesnotexist.cc" target="_blank">Thispersondoesnotexist.cc</a> has better filters. We generate random faces that are better than previous versions available online.</p>
+<a href="https://thispersondoesnotexist.cc" target="_blank" style={{ color: "white", fontWeight: "bold", textDecoration: "none" }}>Thispersondoesnotexist.cc</a> has better filters. We generate random faces that are better than previous versions available online.</p>
   <h3>Get Desired Random Face Generator Image</h3>
 <p>Sometimes, due to a large number of requests, loading takes 2-3 seconds. You can select your gender preference and reload to get desired images. The generator creates a new image on each refresh/page reload.</p>
 
@@ -72,7 +72,7 @@ export const translations: Record<string, Translation> = {
 <h3>AI Face & Fake Images Detection Tools - Recent Developments</h3>
 <p>Recently, various websites have started providing free tools to detect whether the image is AI-generated or not. These can be useful for someone looking to get a deeper understanding of "This Person Does Not Exist" and the algorithms behind it.</p>
 
-<p>Some websites that provide free AI face detection tools include AIorNot.com, hivemoderation.com, and realitydefender.com. Other websites have created free tools to help you distinguish between real and fake faces. One such website is WhichFaceIsReal.com. All of these websites use StyleGAN, developed by <a href="https://nvidia.com" target="_blank">NVIDIA</a>, which led to the development of "This Person Does Not Exist."</p>
+<p>Some websites that provide free AI face detection tools include AIorNot.com, hivemoderation.com, and realitydefender.com. Other websites have created free tools to help you distinguish between real and fake faces. One such website is WhichFaceIsReal.com. All of these websites use StyleGAN, developed by <a href="https://nvidia.com" target="_blank" style={{ color: "white", fontWeight: "bold", textDecoration: "none" }}>NVIDIA</a>, which led to the development of "This Person Does Not Exist."</p>
 
     <h3>Conclusion</h3>
     <p>In a hurry? The next time you’re in need of a fake face, consider using thispersondoesnotexist.cc to create the perfect fake face for your project.</p>
