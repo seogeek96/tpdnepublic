@@ -1,83 +1,116 @@
-"use client"; // Mark as a Client Component
-import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+"use client";
+import React, { useState, useEffect } from "react";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
-import "flag-icons/css/flag-icons.min.css"; // Import flag icons
+import "flag-icons/css/flag-icons.min.css";
 
 const Header = () => {
   const router = useRouter();
-  const [selectedLanguage, setSelectedLanguage] = useState("en"); // Default language is English
+  const pathname = usePathname();
+  const params = useParams();
   const [showDropdown, setShowDropdown] = useState(false);
 
+  // Your original language configuration
   const languages = [
-    { code: "bg", name: "български", flag: "bg" }, // Bulgaria
-    { code: "ae", name: "العربية", flag: "ae" }, // UAE (Arabic)
-    { code: "es", name: "Español", flag: "es" }, // Spain
-    { code: "fr", name: "Français", flag: "fr" }, // France
-    { code: "de", name: "Deutsch", flag: "de" }, // Germany
-    { code: "it", name: "Italiano", flag: "it" }, // Italy
-    { code: "jp", name: "日本語", flag: "jp" }, // Japan
-    { code: "kr", name: "한국어", flag: "kr" }, // South Korea
-    { code: "cn", name: "中國", flag: "cn" }, // China
-    { code: "ru", name: "Русский", flag: "ru" }, // Russia
-    { code: "br", name: "Português", flag: "br" }, // Brazil
-    { code: "ro", name: "Română", flag: "ro" }, // Romania
-    { code: "sv", name: "Svenska", flag: "se" }, // Sweden
-    { code: "ua", name: "Українська", flag: "ua" }, // Ukraine
-    { code: "gr", name: "Ελληνικά", flag: "gr" }, // Greece
-    { code: "no", name: "Norsk", flag: "no" }, // Norway
-    { code: "id", name: "Indonesia", flag: "id" }, // Indonesia
-    { code: "tr", name: "Turkey", flag: "tr" }, // Turkey
-    { code: "et", name: "Eesti keel", flag: "ee" }, // Estonia
-    { code: "nl", name: "Nederlands", flag: "nl" }, // Netherlands
-    { code: "si", name: "Slovenščina", flag: "si" }, // Slovenia
-    { code: "pl", name: "Polskie", flag: "pl" }, // Poland
-    { code: "fi", name: "Finnish", flag: "fi" }, // Finland
-    { code: "en", name: "English", flag: "gb" }, // United Kingdom
+    { code: "bg", name: "български", flag: "bg" },
+    { code: "ae", name: "العربية", flag: "ae" },
+    { code: "es", name: "Español", flag: "es" },
+    { code: "fr", name: "Français", flag: "fr" },
+    { code: "de", name: "Deutsch", flag: "de" },
+    { code: "it", name: "Italiano", flag: "it" },
+    { code: "jp", name: "日本語", flag: "jp" },
+    { code: "kr", name: "한국어", flag: "kr" },
+    { code: "cn", name: "中國", flag: "cn" },
+    { code: "ru", name: "Русский", flag: "ru" },
+    { code: "br", name: "Português", flag: "br" },
+    { code: "ro", name: "Română", flag: "ro" },
+    { code: "sv", name: "Svenska", flag: "se" },
+    { code: "ua", name: "Українська", flag: "ua" },
+    { code: "gr", name: "Ελληνικά", flag: "gr" },
+    { code: "no", name: "Norsk", flag: "no" },
+    { code: "id", name: "Indonesia", flag: "id" },
+    { code: "tr", name: "Turkey", flag: "tr" },
+    { code: "et", name: "Eesti keel", flag: "ee" },
+    { code: "nl", name: "Nederlands", flag: "nl" },
+    { code: "si", name: "Slovenščina", flag: "si" },
+    { code: "pl", name: "Polskie", flag: "pl" },
+    { code: "fi", name: "Finnish", flag: "fi" },
+    { code: "en", name: "English", flag: "gb" },
   ];
 
-  const handleLanguageChange = (languageCode: string) => {
-    setSelectedLanguage(languageCode);
-    setShowDropdown(false);
+  // Get current language from URL
+  const getCurrentLanguage = () => {
+    const langSegment = params?.language;
+    const lang = Array.isArray(langSegment) ? langSegment[0] : langSegment;
+    return lang || "en";
+  };
 
-    // Navigate to the selected language page
-    if (languageCode === "en") {
-      router.push("/"); // Redirect to the home page for English
-    } else {
-      router.push(`/${languageCode}`); // Redirect to the language-specific page
+  const [selectedLanguage, setSelectedLanguage] = useState(getCurrentLanguage());
+
+  // Sync language with URL changes
+  useEffect(() => {
+    setSelectedLanguage(getCurrentLanguage());
+  }, [pathname]);
+
+  // Handle language switching
+  const handleLanguageChange = (languageCode: string) => {
+    const newPath = getLocalizedPath(pathname, languageCode);
+    router.push(newPath);
+    setShowDropdown(false);
+  };
+
+  // Build proper URL paths
+  const getLocalizedPath = (currentPath: string, newLang: string) => {
+    const pathSegments = currentPath.split("/").filter(Boolean);
+    
+    // Remove existing language prefix
+    if (languages.some(lang => lang.code === pathSegments[0])) {
+      pathSegments.shift();
     }
+
+    // English uses root path, others use language prefix
+    return newLang === "en" 
+      ? `/${pathSegments.join("/")}`
+      : `/${newLang}/${pathSegments.join("/")}`;
   };
 
   return (
     <div className={styles.header}>
       <Image
         src="/this person does not exist logo.png"
-        alt="Logo"
+        alt="Website Logo"
         width={500}
         height={300}
         className={styles.logo}
         onClick={() => router.push("/")}
+        priority
       />
+
       <div className={styles.languageDropdown}>
         <button
           className={styles.languageButton}
           onClick={() => setShowDropdown(!showDropdown)}
+          aria-haspopup="true"
+          aria-expanded={showDropdown}
         >
-          <span
-            className={`fi fi-${languages.find((lang) => lang.code === selectedLanguage)?.flag}`}
-          ></span>{" "}
-          {languages.find((lang) => lang.code === selectedLanguage)?.name || "English"}
+          <span className={`fi fi-${languages.find(l => l.code === selectedLanguage)?.flag}`} />
+          <span className={styles.languageName}>
+            {languages.find(l => l.code === selectedLanguage)?.name}
+          </span>
         </button>
+
         {showDropdown && (
-          <div className={styles.dropdownContent}>
+          <div className={styles.dropdownContent} role="menu">
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => handleLanguageChange(lang.code)}
                 className={styles.languageItem}
+                role="menuitem"
               >
-                <span className={`fi fi-${lang.flag}`}></span> {lang.name}
+                <span className={`fi fi-${lang.flag}`} />
+                <span className={styles.languageName}>{lang.name}</span>
               </button>
             ))}
           </div>

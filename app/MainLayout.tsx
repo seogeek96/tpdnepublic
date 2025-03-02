@@ -11,9 +11,14 @@ interface MainLayoutProps {
 }
 
 export default function MainLayout({ children }: MainLayoutProps) {
-  const pathname = usePathname(); // ✅ Get URL pathname
-  const language = pathname.split("/")[1] || "en"; // ✅ Extract language or default to "en"
-  const canonicalUrl = `https://thispersondoesnotexist.cc/${language}`;
+  const pathname = usePathname();
+const languageSegment = pathname.split("/")[1] || "";
+const language = languageSegment || "en"; // More explicit fallback
+
+// New canonical logic
+const canonicalUrl = language === "en" 
+  ? "https://thispersondoesnotexist.cc/" 
+  : `https://thispersondoesnotexist.cc/${language}`;
 
   return (
     <>
