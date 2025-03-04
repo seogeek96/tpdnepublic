@@ -36,16 +36,23 @@ const HomePage: React.FC<HomePageProps> = ({
       {/* Reddit Box - Only show for English (home page) */}
       {language === 'en' && (
         <div className={styles.borderBox}>
-          You can say thank you by upvoting and commenting on this{" "}
-          <a
+          Please join <a
             href="https://www.reddit.com/r/thispersondonotexist/"
             target="_blank"
             rel="noopener noreferrer nofollow"
             className={styles.link}
           >
-            Reddit
+            r/thispersondoesnotexist
           </a>{" "}
-          post.
+          and if you found it useful, upvote us on this{" "}
+          <a
+            href="https://www.reddit.com/r/thispersondonotexist/comments/1j29klx/the_best_ai_face_generator/"
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className={styles.link}
+          >
+            Reddit post.
+          </a>{" "}
         </div>
       )}
 
