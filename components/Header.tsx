@@ -53,14 +53,15 @@ const Header = () => {
   const handleLanguageChange = (languageCode: string) => {
     const newPath = `/${languageCode}${pathname.replace(/^\/[a-z]{2}\//, "/")}`;
     router.push(newPath);
+    router.refresh(); // Add this line to force page update
     setShowDropdown(false);
   };
 
   return (
     <div className={styles.header}>
       <Image
-        src="/this-person-does-not-exist-logo.png"
-        alt="Website Logo"
+        src="/this person does not exist logo.png"
+        alt="this person does not exist logo"
         width={200}
         height={50}
         className={styles.logo}
