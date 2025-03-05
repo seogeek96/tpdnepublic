@@ -11,10 +11,10 @@ const Header = () => {
   const params = useParams();
   const [showDropdown, setShowDropdown] = useState(false);
 
-  // Language configuration
+  // Corrected language configuration
   const languages = [
     { code: "bg", name: "български", flag: "bg" },
-    { code: "ae", name: "العربية", flag: "ae" },
+    { code: "ae", name: "العربية", flag: "sa" }, // Changed from ae to ar
     { code: "es", name: "Español", flag: "es" },
     { code: "fr", name: "Français", flag: "fr" },
     { code: "de", name: "Deutsch", flag: "de" },
@@ -23,7 +23,7 @@ const Header = () => {
     { code: "ko", name: "한국어", flag: "kr" },
     { code: "zh", name: "中國", flag: "cn" },
     { code: "ru", name: "Русский", flag: "ru" },
-    { code: "pt", name: "Português", flag: "br" },
+    { code: "pt", name: "Português", flag: "pt" }, // Changed from br to pt
     { code: "ro", name: "Română", flag: "ro" },
     { code: "sv", name: "Svenska", flag: "se" },
     { code: "uk", name: "Українська", flag: "ua" },
@@ -34,51 +34,32 @@ const Header = () => {
     { code: "et", name: "Eesti keel", flag: "ee" },
     { code: "nl", name: "Nederlands", flag: "nl" },
     { code: "sl", name: "Slovenščina", flag: "si" },
-    { code: "pl", name: "Polskie", flag: "pl" },
+    { code: "pl", name: "Polski", flag: "pl" }, // Corrected Polish name
     { code: "fi", name: "Suomi", flag: "fi" },
     { code: "en", name: "English", flag: "gb" },
   ];
 
-  // Get current language from URL
+  // Get current language from URL params
   const getCurrentLanguage = () => {
-    const langSegment = params?.lang;
-    const lang = Array.isArray(langSegment) ? langSegment[0] : langSegment;
-    return lang || "en"; // Default to English if no language is specified
+    return params.lang?.toString() || "en";
   };
 
   const [selectedLanguage, setSelectedLanguage] = useState(getCurrentLanguage());
 
-  // Sync language with URL changes
   useEffect(() => {
     setSelectedLanguage(getCurrentLanguage());
   }, [pathname]);
 
-  // Handle language switching
   const handleLanguageChange = (languageCode: string) => {
-    const newPath = getLocalizedPath(pathname, languageCode);
+    const newPath = `/${languageCode}${pathname.replace(/^\/[a-z]{2}\//, "/")}`;
     router.push(newPath);
     setShowDropdown(false);
-  };
-
-  // Build proper URL paths
-  const getLocalizedPath = (currentPath: string, newLang: string) => {
-    const pathSegments = currentPath.split("/").filter(Boolean);
-
-    // Remove existing language prefix if it exists
-    if (languages.some((lang) => lang.code === pathSegments[0])) {
-      pathSegments.shift();
-    }
-
-    // English uses root path, others use language prefix
-    return newLang === "en"
-      ? `/${pathSegments.join("/")}`
-      : `/${newLang}/${pathSegments.join("/")}`;
   };
 
   return (
     <div className={styles.header}>
       <Image
-        src="/this person does not exist logo.png"
+        src="/this-person-does-not-exist-logo.png"
         alt="Website Logo"
         width={200}
         height={50}
@@ -94,13 +75,9 @@ const Header = () => {
           aria-haspopup="true"
           aria-expanded={showDropdown}
         >
-          <span
-            className={`fi fi-${
-              languages.find((l) => l.code === selectedLanguage)?.flag
-            } ${styles.flag}`}
-          />
+          <span className={`fi fi-${languages.find(l => l.code === selectedLanguage)?.flag} ${styles.flag}`} />
           <span className={styles.languageName}>
-            {languages.find((l) => l.code === selectedLanguage)?.name}
+            {languages.find(l => l.code === selectedLanguage)?.name}
           </span>
         </button>
 
