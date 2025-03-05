@@ -3,7 +3,7 @@ import Head from "next/head";
 import styles from "../../styles/Algorithmpage.module.css";
 
 const AlgorithmPage = () => {
-  const metaDescription = "Explore NVIDIA's StyleGAN and StyleGAN2 algorithms powering our AI-generated human faces. Technical details on convolutional networks, noise injection, and public dataset availability. Updated January 2025.";
+  const metaDescription = "Explore NVIDIA&apos;s StyleGAN and StyleGAN2 algorithms powering our AI-generated human faces. Technical details on convolutional networks, noise injection, and public dataset availability. Updated January 2025.";
   const pageTitle = "AI Face Generation Algorithm | StyleGAN/StyleGAN2 Explained | This Person Does Not Exist";
 
   return (
@@ -24,7 +24,7 @@ const AlgorithmPage = () => {
           <section className={styles.section}>
             <h2 className={styles.subheading}>Core Technology: StyleGAN Architecture</h2>
             <p>
-              <strong>NVIDIA's StyleGAN</strong> (2019) and its successor <strong>StyleGAN2</strong> (2020) form the backbone of our face generation system. These generative adversarial networks (GANs) enable:
+              <strong>NVIDIA&apos;s StyleGAN</strong> (2019) and its successor <strong>StyleGAN2</strong> (2020) form the backbone of our face generation system. These generative adversarial networks (GANs) enable:
             </p>
             <ul className={styles.list}>
               <li>High-resolution (1024×1024) facial image synthesis</li>
@@ -59,11 +59,12 @@ const AlgorithmPage = () => {
           </section>
 
           <section className={styles.section}>
-            <h2 className={styles.subheading}>Dataset & Availability</h2>
+            <h2 className={styles.subheading}>Dataset &amp; Availability</h2>
             <p>
               Trained on FFHQ dataset containing 70,000 high-quality PNG images at 1024×1024 resolution. Public resources include:
             </p>
             <div className={styles.resources}>
+              
                 Official GitHub Repository
               
                 StyleGAN Research Paper
