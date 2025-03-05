@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
       {
         source: '/:lang(bg|ae|es|fr|de|it|ja|ko|zh|ru|pt|ro|sv|ua|gr|no|id|tr|et|nl|si|pl|fi)/:path*',
         has: [{ type: 'header', key: 'accept-language' }],
-        permanent: false,
+        permanent: true,
         destination: '/:path*',
       }
     ];
