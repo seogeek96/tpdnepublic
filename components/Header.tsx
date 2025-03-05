@@ -11,7 +11,7 @@ const Header = () => {
   const params = useParams();
   const [showDropdown, setShowDropdown] = useState(false);
 
-  // Your original language configuration
+  // Language configuration
   const languages = [
     { code: "bg", name: "български", flag: "bg" },
     { code: "ae", name: "العربية", flag: "ae" },
@@ -19,31 +19,31 @@ const Header = () => {
     { code: "fr", name: "Français", flag: "fr" },
     { code: "de", name: "Deutsch", flag: "de" },
     { code: "it", name: "Italiano", flag: "it" },
-    { code: "jp", name: "日本語", flag: "jp" },
-    { code: "kr", name: "한국어", flag: "kr" },
-    { code: "cn", name: "中國", flag: "cn" },
+    { code: "ja", name: "日本語", flag: "jp" },
+    { code: "ko", name: "한국어", flag: "kr" },
+    { code: "zh", name: "中國", flag: "cn" },
     { code: "ru", name: "Русский", flag: "ru" },
-    { code: "br", name: "Português", flag: "br" },
+    { code: "pt", name: "Português", flag: "br" },
     { code: "ro", name: "Română", flag: "ro" },
     { code: "sv", name: "Svenska", flag: "se" },
-    { code: "ua", name: "Українська", flag: "ua" },
-    { code: "gr", name: "Ελληνικά", flag: "gr" },
+    { code: "uk", name: "Українська", flag: "ua" },
+    { code: "el", name: "Ελληνικά", flag: "gr" },
     { code: "no", name: "Norsk", flag: "no" },
     { code: "id", name: "Indonesia", flag: "id" },
-    { code: "tr", name: "Turkey", flag: "tr" },
+    { code: "tr", name: "Türkçe", flag: "tr" },
     { code: "et", name: "Eesti keel", flag: "ee" },
     { code: "nl", name: "Nederlands", flag: "nl" },
-    { code: "si", name: "Slovenščina", flag: "si" },
+    { code: "sl", name: "Slovenščina", flag: "si" },
     { code: "pl", name: "Polskie", flag: "pl" },
-    { code: "fi", name: "Finnish", flag: "fi" },
+    { code: "fi", name: "Suomi", flag: "fi" },
     { code: "en", name: "English", flag: "gb" },
   ];
 
   // Get current language from URL
   const getCurrentLanguage = () => {
-    const langSegment = params?.language;
+    const langSegment = params?.lang;
     const lang = Array.isArray(langSegment) ? langSegment[0] : langSegment;
-    return lang || "en";
+    return lang || "en"; // Default to English if no language is specified
   };
 
   const [selectedLanguage, setSelectedLanguage] = useState(getCurrentLanguage());
@@ -63,14 +63,14 @@ const Header = () => {
   // Build proper URL paths
   const getLocalizedPath = (currentPath: string, newLang: string) => {
     const pathSegments = currentPath.split("/").filter(Boolean);
-    
-    // Remove existing language prefix
-    if (languages.some(lang => lang.code === pathSegments[0])) {
+
+    // Remove existing language prefix if it exists
+    if (languages.some((lang) => lang.code === pathSegments[0])) {
       pathSegments.shift();
     }
 
     // English uses root path, others use language prefix
-    return newLang === "en" 
+    return newLang === "en"
       ? `/${pathSegments.join("/")}`
       : `/${newLang}/${pathSegments.join("/")}`;
   };
@@ -80,8 +80,8 @@ const Header = () => {
       <Image
         src="/this person does not exist logo.png"
         alt="Website Logo"
-        width={500}
-        height={300}
+        width={200}
+        height={50}
         className={styles.logo}
         onClick={() => router.push("/")}
         priority
@@ -94,9 +94,13 @@ const Header = () => {
           aria-haspopup="true"
           aria-expanded={showDropdown}
         >
-          <span className={`fi fi-${languages.find(l => l.code === selectedLanguage)?.flag}`} />
+          <span
+            className={`fi fi-${
+              languages.find((l) => l.code === selectedLanguage)?.flag
+            } ${styles.flag}`}
+          />
           <span className={styles.languageName}>
-            {languages.find(l => l.code === selectedLanguage)?.name}
+            {languages.find((l) => l.code === selectedLanguage)?.name}
           </span>
         </button>
 
@@ -109,7 +113,7 @@ const Header = () => {
                 className={styles.languageItem}
                 role="menuitem"
               >
-                <span className={`fi fi-${lang.flag}`} />
+                <span className={`fi fi-${lang.flag} ${styles.flag}`} />
                 <span className={styles.languageName}>{lang.name}</span>
               </button>
             ))}

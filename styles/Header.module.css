@@ -1,74 +1,86 @@
 /* Header Styles */
 .header {
-    width: 100%;
-    height: 70px;
-    padding: 20px;
-    background-color: transparent; /* Transparent background */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap; /* Ensure items stay in one line */
-    border: none; /* Remove border */
-  }
-  
-  /* Logo Styles */
-  .logo {
-    width: 200px; /* Adjust as needed */
-    height: auto;
-    cursor: pointer;
-  }
-  
-  /* Language Button */
-  .languageButton {
-    background: transparent;
-    color: white;
-    border: 2px solid #f7e709; /* Yellow border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 8px 16px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .languageButton:hover {
-    background-color: rgba(247, 231, 9, 0.1); /* Light yellow background on hover */
-  }
-  
-  /* Language Dropdown */
-  .languageDropdown {
-    position: relative;
-  }
-  
-  .dropdownContent {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    gap: 10px; /* Spacing between items */
-    background: rgba(0, 0, 0, 0.9); /* Semi-transparent black background */
-    padding: 15px;
-    border-radius: 10px; /* Rounded corners */
-    position: absolute;
-    right: 0;
-    top: 50px;
-    z-index: 1000;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow */
-    width: 350px; /* Fixed width for the dropdown */
-  }
-  
-  /* Language Item */
-  .languageItem {
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s, border-color 0.3s;
-    background-color: rgb(8, 8, 8);
-    color: rgb(241, 245, 245);
-    gap: 150px;
-    text-decoration: none; /* Remove underline from links */
-  }
-  
-  .languageItem:hover {
-    background-color: rgba(243, 236, 236, 0.1); /* Light background on hover */
-    border-color: #f7e709; /* Yellow border on hover */
-  }
+  width: 100%;
+  height: 70px;
+  padding: 20px;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  border: none;
+}
+
+/* Logo Styles */
+.logo {
+  width: 200px;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Language Button */
+.languageButton {
+  background: transparent;
+  color: white;
+  border: 2px solid #f7e709;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between flag and text */
+}
+
+.languageButton:hover {
+  background-color: rgba(247, 231, 9, 0.1);
+}
+
+/* Flag Styles */
+.flag {
+  margin-right: 5px; /* Space between flag and text */
+}
+
+/* Language Dropdown */
+.languageDropdown {
+  position: relative;
+}
+
+.dropdownContent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 15px;
+  border-radius: 10px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+  width: 460px;
+
+}
+
+/* Language Item */
+.languageItem {
+  padding: 10px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  transition: background-color 0.3s, border-color 0.3s;
+  background-color: rgb(8, 8, 8);
+  color: rgb(241, 245, 245);
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between flag and text */
+  text-decoration: none;
+}
+
+.languageItem:hover {
+  background-color: rgba(243, 236, 236, 0.1);
+  border-color: #f7e709;
+}

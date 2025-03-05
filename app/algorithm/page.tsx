@@ -1,41 +1,74 @@
 import React from "react";
-import Head from "next/head"; // Import the Head component
-import styles from "../../styles/Algorithmpage.module.css"; // Import the CSS Module
+import Head from "next/head";
+import styles from "../../styles/Algorithmpage.module.css";
 
 const AlgorithmPage = () => {
+  const metaDescription = "Explore NVIDIA's StyleGAN and StyleGAN2 algorithms powering our AI-generated human faces. Technical details on convolutional networks, noise injection, and public dataset availability. Updated January 2025.";
+  const pageTitle = "AI Face Generation Algorithm | StyleGAN/StyleGAN2 Explained | This Person Does Not Exist";
+
   return (
     <>
       <Head>
-        <meta name="robots" content="noindex, nofollow" /> {/* Add noindex, nofollow meta tag */}
+        <title>{pageTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={metaDescription} />
       </Head>
 
       <div className={styles.container}>
         <h1 className={styles.heading}>Algorithm Used – This Person Does Not Exist</h1>
-        <p className={styles.updatedOn}>Updated on December 20th, 2023</p>
+        <p className={styles.updatedOn}>Last Updated: December 20th, 2023</p>
 
         <div className={styles.content}>
-          <p>
-            <strong>StyleGAN</strong> is an algorithm developed by NVIDIA that allows for the generation of random people’s faces. The algorithm is based on a pre-trained model which is capable of finding hidden factors of variation such as position of a face, identity, and more than 100 parameters.
-          </p>
+          <section className={styles.section}>
+            <h2 className={styles.subheading}>Core Technology: StyleGAN Architecture</h2>
+            <p>
+              <strong>NVIDIA's StyleGAN</strong> (2019) and its successor <strong>StyleGAN2</strong> (2020) form the backbone of our face generation system. These generative adversarial networks (GANs) enable:
+            </p>
+            <ul className={styles.list}>
+              <li>High-resolution (1024×1024) facial image synthesis</li>
+              <li>Separate control of high-level attributes vs texture details</li>
+              <li>Non-linear feature mixing through adaptive instance normalization</li>
+            </ul>
+          </section>
 
-          <p>
-            It works by adjusting the image style and passing each convolutional layer one after the other. This allows for precise control of the image generation process. It also enables the algorithm to find all the hidden factors of variation and improve the level of control.
-          </p>
+          <section className={styles.section}>
+            <h2 className={styles.subheading}>Key Technical Components</h2>
+            <div className={styles.technicalDetails}>
+              <div className={styles.detailItem}>
+                <h3>Noise Injection</h3>
+                <p>Uncorrelated Gaussian noise added at each convolution layer creates realistic stochastic variations in:</p>
+                <ul>
+                  <li>Hair texture</li>
+                  <li>Skin pores</li>
+                  <li>Facial hair patterns</li>
+                </ul>
+              </div>
+              
+              <div className={styles.detailItem}>
+                <h3>Mapping Network</h3>
+                <p>8-layer MLP transforms latent vectors to intermediate codes controlling:</p>
+                <ul>
+                  <li>Pose (yaw/pitch/roll)</li>
+                  <li>Facial features spacing</li>
+                  <li>Lighting conditions</li>
+                </ul>
+              </div>
+            </div>
+          </section>
 
-          <p>
-            The algorithm is also trained to produce images of high quality with a balance between quality and interpolation capabilities. The source code can be found on GitHub along with a new dataset available in the public domain since 2019. Furthermore, <strong>StyleGAN2</strong> was introduced in 2020.
-          </p>
-          <p>
-            StyleGAN is an AI-generated algorithm that enables precise control over the generation of images. It begins by taking a constant input before adjusting the image style by passing each convolutional layer one after the other. This is used to control the features of the image at any scale.
-          </p>
-
-          <p>
-            The algorithm also defines the high-level attributes of the image such as the position of the face, gender, hairstyle, and other details. Noise is added in the form of uncorrelated Gaussian noise, which is then adjusted based on the studied features.
-          </p>
-
-          <p>
-            Currently, it is trained to generate images of high quality, and the source code is available to the public. Additionally, a new dataset was released in 2019, and <strong>StyleGAN2</strong> was released in 2020.
-          </p>
+          <section className={styles.section}>
+            <h2 className={styles.subheading}>Dataset & Availability</h2>
+            <p>
+              Trained on FFHQ dataset containing 70,000 high-quality PNG images at 1024×1024 resolution. Public resources include:
+            </p>
+            <div className={styles.resources}>
+                Official GitHub Repository
+              
+                StyleGAN Research Paper
+            </div>
+          </section>
         </div>
       </div>
     </>

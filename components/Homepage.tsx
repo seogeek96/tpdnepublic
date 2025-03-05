@@ -1,5 +1,5 @@
-"use client"; // Mark as a Client Component
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/Homepage.module.css";
 import { translations } from "../utils/translations";
 import Image from 'next/image';
@@ -20,7 +20,14 @@ const HomePage: React.FC<HomePageProps> = ({
   setGender,
   fetchRandomImage,
 }) => {
+  const [isClient, setIsClient] = useState(false);
+  const [imgSrc, setImgSrc] = useState(imageUrl);
   const content = translations[language] || translations.en;
+
+  useEffect(() => {
+    setIsClient(true);
+    setImgSrc(imageUrl);
+  }, [imageUrl]);
 
   const handleGenderChange = (selectedGender: string) => {
     setGender(selectedGender);
@@ -33,8 +40,7 @@ const HomePage: React.FC<HomePageProps> = ({
       <p className={styles.paragraph}>{content.updatedOn}: January 16th, 2025</p>
       <p className={styles.paragraph}>{content.description}</p>
 
-      {/* Reddit Box - Only show for English (home page) */}
-      {language === 'en' && (
+      {isClient && language === 'en' && (
         <div className={styles.borderBox}>
           Please join <a
             href="https://www.reddit.com/r/thispersondonotexist/"
@@ -66,19 +72,15 @@ const HomePage: React.FC<HomePageProps> = ({
       </div>
 
       <div className={styles.imageContainer}>
-        {imageUrl ? (
+        {imgSrc ? (
           <Image
-            src={imageUrl}
+            src={imgSrc}
             alt="This person does not exist"
-            title="This person does not exist"  
-            className={styles.image}
             width={600}
             height={400}
-            loading="eager"
-            data-nimg="1"
-            onError={(e) => {
-              e.currentTarget.src = "https://via.placeholder.com/300?text=Image+Not+Found";
-            }}
+            className={styles.image}
+            priority
+            onError={() => setImgSrc("https://via.placeholder.com/300?text=Image+Not+Found")}
           />
         ) : (
           <div className={styles.skeleton}></div>
