@@ -1,6 +1,4 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+const nextConfig = {
   async redirects() {
     return [
       {
@@ -13,17 +11,6 @@ const nextConfig: NextConfig = {
         destination: '/',
         permanent: true,
       },
-      {
-        source: '/en/:path*',
-        destination: '/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:lang(bg|ae|es|fr|de|it|ja|ko|zh|ru|pt|ro|sv|ua|gr|no|id|tr|et|nl|si|pl|fi)/:path*',
-        has: [{ type: 'header', key: 'accept-language' }],
-        permanent: true,
-        destination: '/:path*',
-      }
     ];
   },
   images: {

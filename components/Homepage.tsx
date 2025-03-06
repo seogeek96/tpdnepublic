@@ -37,7 +37,7 @@ const HomePage: React.FC<HomePageProps> = ({
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>{content.heading}</h1>
-      <p className={styles.paragraph}>{content.updatedOn}: January 16th, 2025</p>
+      <p className={styles.paragraph}>{content.updatedOn}: March 1st, 2025</p>
       <p className={styles.paragraph}>{content.description}</p>
 
       {isClient && language === 'en' && (
