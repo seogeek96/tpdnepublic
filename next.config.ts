@@ -10,11 +10,11 @@ const nextConfig = {
         source: '/en',
         destination: '/',
         permanent: true,
-      },
+      }
     ];
   },
   images: {
-    domains: ['via.placeholder.com'], // Add your image hosts
+    domains: ['via.placeholder.com'],
   },
 };
 
