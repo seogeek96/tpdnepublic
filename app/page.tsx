@@ -17,6 +17,7 @@ export default function Home() {
       
       // Create a blob URL for the image
       const imageBlob = await response.blob();
+      
       const newImageUrl = URL.createObjectURL(imageBlob);
 
       // Revoke the previous blob URL to free up memory
