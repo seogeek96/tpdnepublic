@@ -1,7 +1,7 @@
 /* Base Styles */
 body {
   margin: 0;
-  padding: 20px;
+  padding: 30px;
   font-family: Arial, sans-serif;
   background: linear-gradient(0deg, rgba(2,0,36,1) 70%, rgb(53, 8, 104) 90%);
   color: white;
@@ -21,7 +21,7 @@ body {
   width: 100%;
   max-width: 1080px;
   min-height: 100vh;
-  padding: 20px;
+  padding: 40px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -74,9 +74,9 @@ p {
 }
 
 /* Media Queries for Responsive Design */
-@media (max-width: 1200px) {
-  body { padding: 15px; }
-  .layout-Container, .App { padding: 15px; }
+@media (max-width: 1080px) {
+  body { padding: 25px;  max-width: 1200px; }
+  .layout-Container, .App { padding: 35px; max-width: 900px;}
   h1, h2, h3, p { padding: 0 30px; } /* Adjusted padding for smaller screens */
 }
 
