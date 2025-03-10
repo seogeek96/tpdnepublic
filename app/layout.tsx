@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "This Person Does Not Exist - AI-Generated Faces",
     description: "Explore AI-generated faces and fake person images. Perfect for design tools and creative projects.",
-    images: ["https://thispersondoesnotexist.com/og-image.png"],
+    images: ["https://thispersondoesnotexist.cc/og-image.png"],
   },
   other: {
     "google-site-verification": "noDxY7-Iw_ArIQTqmhnxSTTwPxM1R78uf9FxSnmJ_e0",
