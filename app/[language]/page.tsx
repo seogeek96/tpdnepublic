@@ -1,17 +1,72 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
-import { useParams } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import HomePage from "@/components/Homepage";
+import RootLayout from "../layout"; // Import RootLayout
+import { translations } from "@/utils/translations"; // Import translations
 
 export default function LanguagePage() {
-  const { language } = useParams();
-  const selectedLanguage = Array.isArray(language) ? language[0] : language || "en"; // Ensure it's a string
+  const router = useRouter();
+  const pathname = usePathname();
+  const params = useParams();
 
+  // ✅ Type-safe language extraction
+  const getMappedLanguage = useCallback((lang: string | string[] | undefined): string => {
+    if (!lang) return "en"; // Default to English if undefined
+
+    // Ensure lang is a string
+    const rawLang = Array.isArray(lang) ? lang[0] : lang;
+
+    // Define language mappings with explicit types
+    const languageMap: { [key: string]: string } = {
+      ae: "ar",
+      br: "pt",
+      cn: "zh",
+      gr: "el",
+      jp: "ja",
+      kr: "ko",
+      si: "sl",
+      ua: "uk",
+    };
+
+    // Use mapped value or fallback to rawLang
+    return languageMap[rawLang] || rawLang;
+  }, []);
+
+  // ✅ Safe language extraction
+  const selectedLanguage = getMappedLanguage(params?.language);
+
+  // Redirect legacy URLs to their new versions
+  useEffect(() => {
+    if (!params?.language) return; // Skip if no language param
+
+    // Ensure language is a string
+    const rawLang = Array.isArray(params.language) ? params.language[0] : params.language;
+
+    // Define redirect mappings
+    const redirectMap: { [key: string]: string } = {
+      ae: "ar",
+      br: "pt",
+      cn: "zh",
+      gr: "el",
+      jp: "ja",
+      kr: "ko",
+      si: "sl",
+      ua: "uk",
+    };
+
+    // Redirect if the language is in the redirect map
+    if (redirectMap[rawLang]) {
+      const newPath = pathname.replace(`/${rawLang}/`, `/${redirectMap[rawLang]}/`);
+      router.replace(newPath);
+    }
+  }, [params, pathname, router]);
+
+  // Rest of your existing logic...
   const [imageUrl, setImageUrl] = useState("");
   const [gender, setGender] = useState("male");
   const [buttonText, setButtonText] = useState("Download Image");
 
-  // ✅ Stable function with no unnecessary dependencies
   const fetchRandomImage = useCallback(async (selectedGender: string) => {
     try {
       const timestamp = Date.now();
@@ -23,14 +78,14 @@ export default function LanguagePage() {
       const newImageUrl = URL.createObjectURL(imageBlob);
 
       setImageUrl((prevUrl) => {
-        if (prevUrl) URL.revokeObjectURL(prevUrl); // Clean previous image
+        if (prevUrl) URL.revokeObjectURL(prevUrl);
         return newImageUrl;
       });
     } catch (error) {
       console.error("Error fetching image:", error);
       setImageUrl("https://via.placeholder.com/300?text=Image+Not+Found");
     }
-  }, []); // ✅ Empty dependency array ensures function doesn't change
+  }, []);
 
   const downloadImage = () => {
     if (!imageUrl) {
@@ -51,27 +106,26 @@ export default function LanguagePage() {
 
   useEffect(() => {
     fetchRandomImage(gender);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [gender]); // ✅ Only runs when gender changes
+  }, [gender, fetchRandomImage]);
 
   useEffect(() => {
     return () => {
-      if (imageUrl) {
-        URL.revokeObjectURL(imageUrl);
-      }
+      if (imageUrl) URL.revokeObjectURL(imageUrl);
     };
   }, [imageUrl]);
 
   return (
-    <div>
-      <HomePage
-        language={selectedLanguage} // Now guaranteed to be a string
-        imageUrl={imageUrl}
-        downloadImage={downloadImage}
-        buttonText={buttonText}
-        setGender={setGender}
-        fetchRandomImage={fetchRandomImage}
-      />
-    </div>
+    <RootLayout lang={selectedLanguage}> {/* Pass lang to RootLayout */}
+      <div>
+        <HomePage
+          language={selectedLanguage}
+          imageUrl={imageUrl}
+          downloadImage={downloadImage}
+          buttonText={buttonText}
+          setGender={setGender}
+          fetchRandomImage={fetchRandomImage}
+        />
+      </div>
+    </RootLayout>
   );
 }

@@ -1,57 +1,52 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { useParams, usePathname, useRouter } from "next/navigation";
+import React, { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import "flag-icons/css/flag-icons.min.css";
 
-const Header = () => {
+// Define the type for language mappings
+type LanguageMap = {
+  [key: string]: string;
+};
+
+// Define props for the Header component
+interface HeaderProps {
+  selectedLanguage: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ selectedLanguage }) => {
   const router = useRouter();
   const pathname = usePathname();
-  const params = useParams();
   const [showDropdown, setShowDropdown] = useState(false);
 
   // Language configuration
   const languages = [
     { code: "bg", name: "български", flag: "bg" },
-    { code: "ae", name: "العربية", flag: "ae" }, // Arabic (unchanged)
+    { code: "ar", name: "العربية", flag: "sa" },
     { code: "es", name: "Español", flag: "es" },
     { code: "fr", name: "Français", flag: "fr" },
     { code: "de", name: "Deutsch", flag: "de" },
     { code: "it", name: "Italiano", flag: "it" },
-    { code: "jp", name: "日本語", flag: "jp" },
-    { code: "kr", name: "한국어", flag: "kr" },
-    { code: "cn", name: "中國", flag: "cn" },
+    { code: "ja", name: "日本語", flag: "jp" },
+    { code: "ko", name: "한국어", flag: "kr" },
+    { code: "zh", name: "中國", flag: "cn" },
     { code: "ru", name: "Русский", flag: "ru" },
-    { code: "br", name: "Português", flag: "br" },
+    { code: "pt", name: "Português", flag: "br" },
     { code: "ro", name: "Română", flag: "ro" },
     { code: "sv", name: "Svenska", flag: "se" },
-    { code: "ua", name: "Українська", flag: "ua" },
-    { code: "gr", name: "Ελληνικά", flag: "gr" },
+    { code: "uk", name: "Українська", flag: "ua" },
+    { code: "el", name: "Ελληνικά", flag: "gr" },
     { code: "no", name: "Norsk", flag: "no" },
     { code: "id", name: "Indonesia", flag: "id" },
     { code: "tr", name: "Turkey", flag: "tr" },
     { code: "et", name: "Eesti keel", flag: "ee" },
     { code: "nl", name: "Nederlands", flag: "nl" },
-    { code: "si", name: "Slovenščina", flag: "si" },
+    { code: "sl", name: "Slovenščina", flag: "si" },
     { code: "pl", name: "Polskie", flag: "pl" },
     { code: "fi", name: "Finnish", flag: "fi" },
     { code: "en", name: "English", flag: "gb" },
   ];
-
-  // Get current language from URL
-  const getCurrentLanguage = () => {
-    const langSegment = params?.lang;
-    const lang = Array.isArray(langSegment) ? langSegment[0] : langSegment;
-    return lang || "en"; // Default to English if no language is found
-  };
-
-  const [selectedLanguage, setSelectedLanguage] = useState(getCurrentLanguage());
-
-  // Sync language with URL changes
-  useEffect(() => {
-    setSelectedLanguage(getCurrentLanguage());
-  }, [pathname, params]);
 
   // Handle language switching
   const handleLanguageChange = (languageCode: string) => {

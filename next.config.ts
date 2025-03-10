@@ -1,20 +1,23 @@
+// next.config.js
 const nextConfig = {
   async redirects() {
     return [
-      {
-        source: '/contact-us',
-        destination: '/contact',
-        permanent: true,
-      },
-      {
-        source: '/en',
-        destination: '/',
-        permanent: true,
-      }
+      // Language transitions
+      { source: '/br/:path*', destination: '/pt/:path*', permanent: true },
+      { source: '/cn/:path*', destination: '/zh/:path*', permanent: true },
+      { source: '/gr/:path*', destination: '/el/:path*', permanent: true },
+      { source: '/jp/:path*', destination: '/ja/:path*', permanent: true },
+      { source: '/kr/:path*', destination: '/ko/:path*', permanent: true },
+      { source: '/si/:path*', destination: '/sl/:path*', permanent: true },
+      { source: '/ua/:path*', destination: '/uk/:path*', permanent: true },
+      // Existing redirects
+      { source: '/ae/:path*', destination: '/ar/:path*', permanent: true },
+      { source: '/contact-us', destination: '/contact', permanent: true },
+      { source: '/en', destination: '/', permanent: true },
     ];
   },
   images: {
-    domains: ['via.placeholder.com'],
+    domains: ["via.placeholder.com"],
   },
 };
 

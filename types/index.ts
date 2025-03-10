@@ -2,6 +2,7 @@
 import React from "react";
 
 export interface Translation {
+  lang: string; // Add this property for the language code
   title: string;
   heading: string;
   updatedOn: string;

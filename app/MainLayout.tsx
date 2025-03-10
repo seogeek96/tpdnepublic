@@ -12,13 +12,30 @@ interface MainLayoutProps {
 
 export default function MainLayout({ children }: MainLayoutProps) {
   const pathname = usePathname();
-const languageSegment = pathname.split("/")[1] || "";
-const language = languageSegment || "en"; // More explicit fallback
 
-// New canonical logic
-const canonicalUrl = language === "en" 
-  ? "https://thispersondoesnotexist.cc/" 
-  : `https://thispersondoesnotexist.cc/${language}`;
+  // Extract language segment from the URL
+  const languageSegment = pathname.split("/")[1] || "";
+
+  // Map legacy language codes to new ones
+  const languageMap: { [key: string]: string } = {
+    ae: "ar",
+    br: "pt",
+    cn: "zh",
+    gr: "el",
+    jp: "ja",
+    kr: "ko",
+    si: "sl",
+    ua: "uk",
+  };
+
+  // Get the selected language
+  const selectedLanguage = languageMap[languageSegment] || languageSegment || "en";
+
+  // New canonical logic
+  const canonicalUrl =
+    selectedLanguage === "en"
+      ? "https://thispersondoesnotexist.cc/"
+      : `https://thispersondoesnotexist.cc/${selectedLanguage}`;
 
   return (
     <>
@@ -41,7 +58,8 @@ const canonicalUrl = language === "en"
       />
 
       <div className="layout-Container">
-        <Header />
+        {/* Pass selectedLanguage to the Header component */}
+        <Header selectedLanguage={selectedLanguage} />
         <main>{children}</main>
         <Footer />
       </div>

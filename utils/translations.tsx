@@ -3,6 +3,7 @@ import { Translation } from "../types/index";
 
 export const translations: Record<string, Translation> = {
   en: {
+    lang:"en",
     title: "This Person Does Not Exist 2025",
     heading: "This Person Does Not Exist 2025",
     updatedOn: "Updated on",
@@ -79,7 +80,8 @@ export const translations: Record<string, Translation> = {
       </>
     ),
   },
-  ae: {
+  ar: {
+    lang:"ar",
     title: "هذا الشخص غير موجود 2025",
     heading: "هذا الشخص غير موجود 2025",
     updatedOn: "تم التحديث بتاريخ",
@@ -110,6 +112,7 @@ export const translations: Record<string, Translation> = {
 
     },
     bg: {
+      lang:"bg",
       title:"Това лице не съществува 2025",
       heading:"Това лице не съществува 2025",
       updatedOn: "Актуализирано на",
@@ -157,6 +160,7 @@ export const translations: Record<string, Translation> = {
     </>
     },  
     ru: {
+      lang:"ru",
       title:"Этого человека не существует 2025",
       heading:"Этого человека не существует 2025",
       updatedOn: "Обновлено на",
@@ -204,6 +208,7 @@ export const translations: Record<string, Translation> = {
     </>
     },
   es: {
+    lang:"es",
     title:"Esta persona no existe 2025",
     heading: "Esta persona no existe 2025",
     updatedOn: "Actualizado el",
@@ -250,6 +255,7 @@ export const translations: Record<string, Translation> = {
     </>
   },
   it:{
+    lang:"it",
     title:"Questa persona non esiste 2025",
     heading:"Questa persona non esiste 2025 ",
     updatedOn: "Aggiornato il",
@@ -297,6 +303,7 @@ export const translations: Record<string, Translation> = {
   </>
   },
   fr:{
+    lang:"fr",
     title:"Cette personne n'existe pas 2025",
     heading:"Cette personne n'existe pas 2025.",
     updatedOn: "Mis à jour le",
@@ -342,6 +349,7 @@ export const translations: Record<string, Translation> = {
   </>
   },
   tr:{
+    lang:"tr",
     title:"Bu Kişi Mevcut Değil 2025",
     heading:"Bu Kişi Mevcut Değil 2025",
     updatedOn: "Güncellenme tarihi",
@@ -387,6 +395,7 @@ export const translations: Record<string, Translation> = {
   </>
   },
   ro:{
+    lang:"ro",
     title:"Această persoană nu există 2025",
     heading:"Această persoană nu există 2025",
     updatedOn: "Actualizat la",
@@ -431,7 +440,8 @@ export const translations: Record<string, Translation> = {
 <p>În grabă... data viitoare când aveți nevoie de o față falsă, luați în considerare utilizarea această persoană nu există pentru a crea fața falsă perfectă pentru proiectul dumneavoastră. </p>
     </>
   },
-  cn:{
+  zh:{
+    lang:"zh",
     title:"此人不存在 2025",
     heading:"此人不存在 2025",
     updatedOn: "更新于",
@@ -479,6 +489,7 @@ export const translations: Record<string, Translation> = {
     </>
   },
   sv:{
+    lang:"sv",
     title:"Denna person existerar inte 2025",
     heading:"Denna person existerar inte 2025",
     updatedOn: "Uppdaterad den",
@@ -524,7 +535,8 @@ export const translations: Record<string, Translation> = {
  
   </>
   },
-  ua:{
+  uk:{
+    lang:"uk",
     title:"Цієї людини не існує 2025",
     heading:"Цієї людини не існує 2025",
     updatedOn: "Оновлено на",
@@ -570,7 +582,8 @@ export const translations: Record<string, Translation> = {
 
   </>
   },
-  gr:{
+  el:{
+    lang:"el",
     title:"Αυτό το άτομο δεν υπάρχει 2025",
     heading:"Αυτό το άτομο δεν υπάρχει 2025",
     updatedOn: "Ενημερώθηκε στις",
@@ -618,6 +631,7 @@ export const translations: Record<string, Translation> = {
   </>
   },
   id:{
+    lang:"id",
     title:"Orang Ini Tidak Ada 2025",
     heading:"Orang Ini Tidak Ada 2025",
     updatedOn: "Diperbarui pada",
@@ -665,6 +679,7 @@ export const translations: Record<string, Translation> = {
   </>
   },
   no:{
+    lang:"no",
     title:"Denne personen eksisterer ikke 2025",
     heading:"Denne personen eksisterer ikke 2025",
     updatedOn: "Oppdatert den",
@@ -711,7 +726,8 @@ export const translations: Record<string, Translation> = {
 
   </>
   },
-  jp:{
+  ja:{
+    lang:"ja",
     title:"この人物は存在しない 2025",
     heading:"この人物は存在しない 2025",
     updatedOn: "更新日",
@@ -758,6 +774,7 @@ export const translations: Record<string, Translation> = {
   </>
   },
   nl:{
+    lang:"nl",
     title:"Deze persoon bestaat niet 2025",
     heading:"Deze persoon bestaat niet 2025",
     updatedOn: "Bijgewerkt op",
@@ -802,7 +819,8 @@ export const translations: Record<string, Translation> = {
 
     </>
   },
-  si:{
+  sl:{
+    lang:"sl",
     title:"Ta oseba ne obstaja 2025",
     heading:"Ta oseba ne obstaja 2025.",
     updatedOn: "Posodobljeno na",
@@ -850,6 +868,7 @@ export const translations: Record<string, Translation> = {
     </>
   },
   et:{
+    lang:"et",
     title:"Seda isikut ei ole olemas 2025",
     heading:"Seda isikut ei ole olemas 2025",
     updatedOn: "Uuendatud kuupäeval",
@@ -895,6 +914,7 @@ export const translations: Record<string, Translation> = {
 </>
     },
   pl:{
+    lang:"pl",
     title:"Ta osoba nie istnieje 2025",
     heading:"Ta osoba nie istnieje 2025",
     updatedOn: "Aktualizowano",
@@ -941,7 +961,8 @@ export const translations: Record<string, Translation> = {
 
   </>
   }, 
-  kr:{
+  ko:{
+    lang:"ko",
     title:"이 사람은 존재하지 않습니다 2025",
     heading:"이 사람은 존재하지 않습니다 2025.",
     updatedOn: "업데이트된 날짜",
@@ -989,6 +1010,7 @@ export const translations: Record<string, Translation> = {
   </>
   },
   de:{
+    lang:"de",
     title:"Diese Person gibt es nicht 2025",
     heading:"Diese Person gibt es nicht 2025",
     updatedOn: "Aktualisiert am",
@@ -1035,6 +1057,7 @@ export const translations: Record<string, Translation> = {
   </>
   },
   fi:{
+    lang:"fi",
     title:"Tätä henkilöä ei ole olemassa 2025",
     heading:"Tätä henkilöä ei ole olemassa 2025",
       updatedOn: "Päivitetty",
@@ -1080,7 +1103,8 @@ export const translations: Record<string, Translation> = {
 <p>Kiireessä? seuraavan kerran, kun tarvitset väärennettyjä kasvoja, harkitse tätä henkilöä ei ole olemassa:n käyttämistä täydellisten väärennettyjen kasvojen luomiseen projektiisi.</p>
 </>
     },
-br:{
+pt:{
+  lang:"pt",
   title:"Esta pessoa não existe 2025",
   heading:"Esta pessoa não existe 2025",
   updatedOn: "Atualizado em",
