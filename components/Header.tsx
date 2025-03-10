@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { useParams, usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation"; // Removed useParams
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import "flag-icons/css/flag-icons.min.css";
