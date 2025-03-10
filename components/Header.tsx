@@ -1,16 +1,11 @@
 "use client";
-import React, { useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import React, { useState, useEffect } from "react";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import "flag-icons/css/flag-icons.min.css";
 
-// Define the type for language mappings
-type LanguageMap = {
-  [key: string]: string;
-};
-
-// Define props for the Header component
+// Define the props interface
 interface HeaderProps {
   selectedLanguage: string;
 }
@@ -18,6 +13,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ selectedLanguage }) => {
   const router = useRouter();
   const pathname = usePathname();
+  const params = useParams();
   const [showDropdown, setShowDropdown] = useState(false);
 
   // Language configuration
@@ -28,21 +24,21 @@ const Header: React.FC<HeaderProps> = ({ selectedLanguage }) => {
     { code: "fr", name: "Français", flag: "fr" },
     { code: "de", name: "Deutsch", flag: "de" },
     { code: "it", name: "Italiano", flag: "it" },
-    { code: "ja", name: "日本語", flag: "jp" },
-    { code: "ko", name: "한국어", flag: "kr" },
-    { code: "zh", name: "中國", flag: "cn" },
+    { code: "ja", name: "日本語", flag: "jp" }, // Updated from jp to ja
+    { code: "ko", name: "한국어", flag: "kr" }, // Updated from kr to ko
+    { code: "zh", name: "中國", flag: "cn" }, // Updated from cn to zh
     { code: "ru", name: "Русский", flag: "ru" },
-    { code: "pt", name: "Português", flag: "br" },
+    { code: "pt", name: "Português", flag: "br" }, // Updated from br to pt
     { code: "ro", name: "Română", flag: "ro" },
     { code: "sv", name: "Svenska", flag: "se" },
-    { code: "uk", name: "Українська", flag: "ua" },
-    { code: "el", name: "Ελληνικά", flag: "gr" },
+    { code: "uk", name: "Українська", flag: "ua" }, // Updated from ua to uk
+    { code: "el", name: "Ελληνικά", flag: "gr" }, // Updated from gr to el
     { code: "no", name: "Norsk", flag: "no" },
     { code: "id", name: "Indonesia", flag: "id" },
     { code: "tr", name: "Turkey", flag: "tr" },
     { code: "et", name: "Eesti keel", flag: "ee" },
     { code: "nl", name: "Nederlands", flag: "nl" },
-    { code: "sl", name: "Slovenščina", flag: "si" },
+    { code: "sl", name: "Slovenščina", flag: "si" }, // Updated from si to sl
     { code: "pl", name: "Polskie", flag: "pl" },
     { code: "fi", name: "Finnish", flag: "fi" },
     { code: "en", name: "English", flag: "gb" },

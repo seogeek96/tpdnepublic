@@ -2,8 +2,11 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import HomePage from "@/components/Homepage";
-import RootLayout from "../layout"; // Import RootLayout
-import { translations } from "@/utils/translations"; // Import translations
+
+// Define the type for language mappings
+type LanguageMap = {
+  [key: string]: string;
+};
 
 export default function LanguagePage() {
   const router = useRouter();
@@ -18,7 +21,7 @@ export default function LanguagePage() {
     const rawLang = Array.isArray(lang) ? lang[0] : lang;
 
     // Define language mappings with explicit types
-    const languageMap: { [key: string]: string } = {
+    const languageMap: LanguageMap = {
       ae: "ar",
       br: "pt",
       cn: "zh",
@@ -44,7 +47,7 @@ export default function LanguagePage() {
     const rawLang = Array.isArray(params.language) ? params.language[0] : params.language;
 
     // Define redirect mappings
-    const redirectMap: { [key: string]: string } = {
+    const redirectMap: LanguageMap = {
       ae: "ar",
       br: "pt",
       cn: "zh",
@@ -115,17 +118,16 @@ export default function LanguagePage() {
   }, [imageUrl]);
 
   return (
-    <RootLayout lang={selectedLanguage}> {/* Pass lang to RootLayout */}
-      <div>
-        <HomePage
-          language={selectedLanguage}
-          imageUrl={imageUrl}
-          downloadImage={downloadImage}
-          buttonText={buttonText}
-          setGender={setGender}
-          fetchRandomImage={fetchRandomImage}
-        />
-      </div>
-    </RootLayout>
+    <div>
+      {/* Remove the <Header /> component here */}
+      <HomePage
+        language={selectedLanguage}
+        imageUrl={imageUrl}
+        downloadImage={downloadImage}
+        buttonText={buttonText}
+        setGender={setGender}
+        fetchRandomImage={fetchRandomImage}
+      />
+    </div>
   );
 }
