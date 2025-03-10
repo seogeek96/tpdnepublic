@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
@@ -13,7 +13,6 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ selectedLanguage }) => {
   const router = useRouter();
   const pathname = usePathname();
-  const params = useParams();
   const [showDropdown, setShowDropdown] = useState(false);
 
   // Language configuration
