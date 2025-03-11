@@ -119,7 +119,7 @@ export default function LanguagePage() {
 
   return (
     <div>
-      {/* Remove the <Header /> component here */}
+      {/* Pass the selectedLanguage to the HomePage component */}
       <HomePage
         language={selectedLanguage}
         imageUrl={imageUrl}

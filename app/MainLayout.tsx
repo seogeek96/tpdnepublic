@@ -1,44 +1,61 @@
 "use client"; // ✅ Ensures this runs on client-side
 
-import React from "react";
+import React, { useEffect } from "react";
 import Script from "next/script";
+import Head from "next/head"; // Import the Head component
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { usePathname } from "next/navigation";
 
 interface MainLayoutProps {
   children: React.ReactNode;
+  lang: string; // Add lang prop
 }
 
-export default function MainLayout({ children }: MainLayoutProps) {
+export default function MainLayout({ children, lang }: MainLayoutProps) {
   const pathname = usePathname();
 
-  // Extract language segment from the URL
-  const languageSegment = pathname.split("/")[1] || "";
-
-  // Map legacy language codes to new ones
-  const languageMap: { [key: string]: string } = {
-    ae: "ar",
-    br: "pt",
-    cn: "zh",
-    gr: "el",
-    jp: "ja",
-    kr: "ko",
-    si: "sl",
-    ua: "uk",
+  // Define metadata for each language
+  const metadataByLang: {
+    [key: string]: { title: string; keywords: string[] };
+  } = {
+    en: {
+      title: "This Person Does Not Exist - AI-Generated Faces",
+      keywords: ["AI-generated faces", "fake person", "AI images", "design tools"],
+    },
+    es: {
+      title: "Esta Persona No Existe - Caras Generadas por IA",
+      keywords: ["caras generadas por IA", "persona falsa", "imágenes de IA", "herramientas de diseño"],
+    },
+    fr: {
+      title: "Cette Personne N'Existe Pas - Visages Générés par IA",
+      keywords: ["visages générés par IA", "personne fictive", "images IA", "outils de design"],
+    },
   };
 
-  // Get the selected language
-  const selectedLanguage = languageMap[languageSegment] || languageSegment || "en";
+  // Fallback to English if the language is not found
+  const metadata = metadataByLang[lang] || metadataByLang.en;
 
   // New canonical logic
   const canonicalUrl =
-    selectedLanguage === "en"
+    lang === "en"
       ? "https://thispersondoesnotexist.cc/"
-      : `https://thispersondoesnotexist.cc/${selectedLanguage}`;
+      : `https://thispersondoesnotexist.cc/${lang}`;
 
   return (
     <>
+      {/* Use next/head to manage the head section */}
+      <Head>
+        {/* Set the HTML lang attribute */}
+        <html lang={lang} />
+        {/* Set the document title */}
+        <title>{metadata.title}</title>
+        {/* Set the meta keywords */}
+        <meta name="keywords" content={metadata.keywords.join(", ")} />
+        {/* Set the canonical URL */}
+        <link rel="canonical" href={canonicalUrl} />
+      </Head>
+
       {/* Use next/script for Google Analytics */}
       <Script
         strategy="afterInteractive"
@@ -59,7 +76,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
 
       <div className="layout-Container">
         {/* Pass selectedLanguage to the Header component */}
-        <Header selectedLanguage={selectedLanguage} />
+        <Header selectedLanguage={lang} />
         <main>{children}</main>
         <Footer />
       </div>
