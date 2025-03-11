@@ -1,11 +1,10 @@
 "use client"; // ✅ Ensures this runs on client-side
 
-import React, { useEffect } from "react";
+import React from "react";
 import Script from "next/script";
 import Head from "next/head"; // Import the Head component
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { usePathname } from "next/navigation";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -13,8 +12,6 @@ interface MainLayoutProps {
 }
 
 export default function MainLayout({ children, lang }: MainLayoutProps) {
-  const pathname = usePathname();
-
   // Define metadata for each language
   const metadataByLang: {
     [key: string]: { title: string; keywords: string[] };
