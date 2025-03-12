@@ -14,11 +14,13 @@ const nextConfig = {
       { source: '/ae/:path*', destination: '/ar/:path*', permanent: true },
       { source: '/contact-us', destination: '/contact', permanent: true },
       { source: '/en', destination: '/', permanent: true },
+      // Catch-all redirect for invalid routes (redirect to homepage)
     ];
   },
   images: {
     domains: ["via.placeholder.com"],
   },
+
 };
 
 export default nextConfig;

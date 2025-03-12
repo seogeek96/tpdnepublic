@@ -184,6 +184,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
+        <meta name="google-site-verification" content="noDxY7-Iw_ArIQTqmhnxSTTwPxM1R78uf9FxSnmJ_e0" />
+        <meta name="yandex-verification" content="5424a42e25dece6b" />
+        <meta name="msvalidate.01" content="394BAB3426D3AA6C5DF8FE0E8A95469B" />
         {/* Preload critical fonts for faster rendering */}
         <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
 
