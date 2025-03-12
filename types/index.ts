@@ -7,6 +7,7 @@ export interface Translation {
   heading: string;
   updatedOn: string;
   downloadImage: string;
+  keywords:string;
   male: string;
   female: string;
   description: string;

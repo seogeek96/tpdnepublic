@@ -19,6 +19,7 @@ export default function LanguageIndexPage() {
         <meta name="description" content={metadata.description} />
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords} /> 
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://thispersondoesnotexist.cc/${lang}`} />
         <meta property="og:image" content="https://thispersondoesnotexist.cc/og-image.png" />

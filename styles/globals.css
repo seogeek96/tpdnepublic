@@ -16,8 +16,8 @@ body {
   margin: 0 auto; /* Center body content */
 }
 
-/* Layout Container */
-.layout-Container, .App {
+/* Desktop First Layout (1440-1201px) */
+.layout-Container {
   width: 100%;
   max-width: 1080px;
   min-height: 100vh;
@@ -25,11 +25,20 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align content to the left */
+  align-items: center;
   box-sizing: border-box;
 }
 
-/* Images */
+.App {
+  width: 100%;
+  max-width: 1080px;
+  padding: 40px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
 .conclusion-img {
   width: 100%;
   max-width: 600px;
@@ -39,54 +48,74 @@ body {
   border-radius: 8px;
   display: block;
 }
-
-/* Typography */
+/* Content Styles */
 h1, h2, h3 {
   width: 100%;
   text-align: left;
-  margin: 0 auto 20px;
-  padding: 0 40px; /* Increased left padding */
+  margin: 0 auto 30px;
+  padding: 0 20px;
   max-width: 800px;
 }
 
-h1 { font-size: 3rem; } /* Increased desktop font size */
-h2 { font-size: 2.5rem; } /* Increased desktop font size */
-h3 { font-size: 2rem; } /* Increased desktop font size */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
 
 p {
   width: 100%;
   text-align: left;
-  margin: 10px auto;
-  padding: 0 40px; /* Increased left padding */
-  font-size: 1.2rem; /* Increased desktop font size */
+  margin: 15px auto;
+  padding: 0 20px;
+  font-size: 1.1rem;
   line-height: 1.6;
   max-width: 700px;
 }
 
-/* Buttons */
 .btn {
-  padding: 12px 24px;
+  padding: 15px 30px;
   font-size: 1.1rem;
   margin: 20px auto;
   width: auto;
-  min-width: 200px;
+  min-width: 220px;
   max-width: 300px;
 }
 
-/* Media Queries for Responsive Design */
+/* Large Desktop (1200px) */
 @media (max-width: 1080px) {
-  body { padding: 25px;  max-width: 1200px; }
-  .layout-Container, .App { padding: 35px; max-width: 900px;}
-  h1, h2, h3, p { padding: 0 30px; } /* Adjusted padding for smaller screens */
+  body {
+    max-width: 1200px;
+    padding: 25px;
+  }
+  
+  .layout-Container {
+    max-width: 1000px;
+    padding: 35px;
+  }
+  
+  .App {
+    max-width: 900px;
+    padding: 35px;
+  }
 }
 
+/* Medium Desktop (992px) */
 @media (max-width: 992px) {
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
-  h3 { font-size: 1.75rem; }
-  p { font-size: 1.1rem; }
-  h1, h2, h3, p { padding: 0 25px; } /* Adjusted padding for smaller screens */
+  body {
+    max-width: 992px;
+    padding: 20px;
+  }
+  
+  .layout-Container {
+    max-width: 900px;
+    padding: 30px;
+  }
+  
+  .App {
+    max-width: 800px;
+    padding: 30px;
+  }
 }
+
 
 @media (max-width: 768px) {
   body { padding: 10px; }

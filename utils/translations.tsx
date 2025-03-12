@@ -10,6 +10,7 @@ export const translations: Record<string, Translation> = {
     downloadImage: "Download Image",
     male: "Male",
     female: "Female",
+    keywords:"This person does not exist, Random face generator, Fake face generator, Random person image, AI face image",
     description:
       "This person does not exist is an AI Image Generator of Faces. Our AI image generator uses generative adversarial networks, computer vision, machine learning algorithms, and deep learning algorithms. Our latest technology can create realistic images of fake faces. Create a variety of different facial expressions with our AI image generator.",
     content: (
@@ -87,6 +88,7 @@ export const translations: Record<string, Translation> = {
     updatedOn: "تم التحديث بتاريخ",
     male:"ذكر",
     female:"أنثى",
+    keywords:"هذا الشخص غير موجود, مولد وجوه عشوائي, مولد وجوه مزيفة, صورة شخص عشوائي, صورة وجه بواسطة الذكاء الاصطناعي",
     downloadImage: "تحميل الصورة",
     description:
    " شبكات الخصومة التوليدية ورؤية الكمبيوتر وخوارزميات التعلم الآلي وخوارزميات التعلم العميق -  يمكن لأحدث تقنياتنا إنشاء صور واقعية لوجوه مزيفة. أنشئ مجموعة متنوعة من تعبيرات الوجه المختلفة باستخدام منشئ الصور المزود بتقنية الذكاء الاصطناعي",
@@ -119,6 +121,7 @@ export const translations: Record<string, Translation> = {
       downloadImage: "изтегляне на изображение",
       male:"мъжки",
       female:"женски",
+      keywords:"Този човек не съществува, Генератор на случайни лица, Генератор на фалшиви лица, Изображение на случайни хора, Изображение на лице с изкуствен интелект",
       description:
       "Открийте силата на изкуствения интелект с нашия генератор на изображения на лица с изкуствен интелект! Нашият AI генератор на изображения използва генеративни мрежи, компютърно зрение, алгоритми за машинно обучение и алгоритми за дълбоко обучение.Нашата най-нова технология може да създава реалистични изображения на фалшиви лица. Създавайте различни изражения на лицето с нашия AI генератор на изображения.Нашата най-нова технология може да създава реалистични изображения на фалшиви лица. Създавайте различни изражения на лицето с нашия AI генератор на изображения. ",
     content: <>
@@ -167,6 +170,7 @@ export const translations: Record<string, Translation> = {
       downloadImage: "скачать изображение",
       male:"мужской",
       female:"женский",
+      keywords:"Этот человек не существует, Генератор случайных лиц, Генератор поддельных лиц, Случайное изображение человека, Изображение лица с ИИ",
       description:"Откройте для себя возможности искусственного интеллекта с помощью нашего генератора изображений лиц с искусственным интеллектом! Наш генератор изображений ИИ использует генеративные состязательные сети, компьютерное зрение, алгоритмы машинного обучения и алгоритмы глубокого обучения. Наша новейшая технология позволяет создавать реалистичные изображения поддельных лиц. Создайте множество различных выражений лица с помощью нашего генератора изображений ИИ.",
     content: <>
     <h2> Этого человека не существует - генератор случайных фотографий лиц</h2>
@@ -215,6 +219,7 @@ export const translations: Record<string, Translation> = {
     downloadImage: "Descargar Imagen",
     male: "Masculino",
     female: "Femenino",
+    keywords:"Esta persona no existe, Generador de rostros aleatorios, Generador de rostros falsos, Imagen de persona aleatoria, Imagen de rostro generada por IA",
     description:"¡Descubre el poder de la IA con nuestro generador de imágenes de rostros! Nuestro generador de imágenes de IA utiliza redes generativas adversariales, visión por ordenador, algoritmos de aprendizaje automático y algoritmos de aprendizaje profundo. Nuestra última tecnología puede crear imágenes realistas de caras falsas. Crea una variedad de expresiones faciales diferentes con nuestro generador de imágenes de IA.",
     content:<>
   <h2>Esta persona no existe - Generador de caras de fotos aleatorias</h2>
@@ -261,6 +266,7 @@ export const translations: Record<string, Translation> = {
     updatedOn: "Aggiornato il",
     male:"maschio",
     female:"femmina",
+    keywords:"Questa persona non esiste, Generatore di volti casuali, Generatore di volti falsi, Immagine di persona casuale, Immagine di volto generata da IA",
     downloadImage: "Scarica immagine",
     description:"Scoprite la potenza dell'intelligenza artificiale con il nostro generatore di immagini di volti! Il nostro generatore di immagini AI utilizza reti generative avversarie, computer vision, algoritmi di apprendimento automatico e algoritmi di apprendimento profondo. La nostra ultima tecnologia è in grado di creare immagini realistiche di volti finti. Create una varietà di espressioni facciali diverse con il nostro generatore di immagini AI.",
   content:<>
@@ -309,6 +315,7 @@ export const translations: Record<string, Translation> = {
     updatedOn: "Mis à jour le",
     male: "mâle",
     female:"femelle",
+    keywords:"Cette personne n'existe pas, Générateur de visages aléatoires, Générateur de faux visages, Image de personne aléatoire, Image de visage par IA",
     downloadImage: "Télécharger l'image",
     description:"Découvrez la puissance de l'IA avec notre générateur d'images de visages ! Notre générateur d'images d'IA utilise des réseaux adversaires génératifs, la vision par ordinateur, des algorithmes d'apprentissage automatique et des algorithmes d'apprentissage profond. Notre dernière technologie peut créer des images réalistes de faux visages. Créez une variété d'expressions faciales différentes avec notre générateur d'images d'IA.",
   content:<>
@@ -355,6 +362,7 @@ export const translations: Record<string, Translation> = {
     updatedOn: "Güncellenme tarihi",
     male:"erkek",
     female:"dişi",
+    keywords:"Bu kişi gerçek değil, Rastgele yüz üretici, Sahte yüz üretici, Rastgele kişi görseli, Yapay zeka yüz görseli", 
     downloadImage: "Resmi indir",
     description:"Yüzlerin Yapay Zeka Görüntü Oluşturucusu ile yapay zekanın gücünü keşfedin! Yapay zeka görüntü oluşturucumuz, üretken düşman ağları, bilgisayarla görme, makine öğrenimi algoritmaları ve derin öğrenme algoritmaları kullanır. En son teknolojimiz sahte yüzlerin gerçekçi görüntülerini oluşturabilir. Yapay zeka görüntü oluşturucumuzla çeşitli farklı yüz ifadeleri oluşturun.",
   content:<>
@@ -401,6 +409,7 @@ export const translations: Record<string, Translation> = {
     updatedOn: "Actualizat la",
     male: "bărbat",
     female:"femeie",
+    keywords:"Această persoană nu există, Generator de fețe aleatorii, Generator de fețe false, Imagine cu persoană aleatorie, Imagine de față generată de AI",
     downloadImage: "Descărcare imaginea",
     description:"Descoperiți puterea inteligenței artificiale cu generatorul nostru de imagini AI de fețe! Generatorul nostru de imagini AI utilizează rețele adversative generative, viziune computerizată, algoritmi de învățare automată și algoritmi de învățare profundă. Cea mai recentă tehnologie a noastră poate crea imagini realiste ale unor fețe false. Creați o varietate de expresii faciale diferite cu generatorul nostru de imagini AI.",
     content:<>
@@ -442,11 +451,12 @@ export const translations: Record<string, Translation> = {
   },
   zh:{
     lang:"zh",
-    title:"此人不存在 2025",
+    title:"此人不存在 2025-随机照片人脸生成器 ",
     heading:"此人不存在 2025",
     updatedOn: "更新于",
     male: "男性",
     female:"男性",
+    keywords:"此人不存在, 随机面孔生成器, 假脸生成器, 随机人物图像, AI人脸图像",
     downloadImage: "下载图片",
     description:"使用我们的人工智能人脸图像生成器，探索人工智能的力量！我们的人工智能图像生成器采用生成对抗网络、计算机视觉、机器学习算法和深度学习算法。 我们的最新技术可以创建逼真的假脸图像。使用我们的人工智能图像生成器，创建各种不同的面部表情。",
     content:<>
@@ -495,6 +505,7 @@ export const translations: Record<string, Translation> = {
     updatedOn: "Uppdaterad den",
     male: "manlig",
     female:"kvinnlig",
+    keywords:"Den här personen existerar inte, Slumpmässigt ansiktsgenerator, Falskt ansiktsgenerator, Slumpmässig personbild, AI-genererad ansiktsbild",
     downloadImage: "Ladda ner bild",
     description:"Upptäck kraften i AI med vår AI-bildgenerator för ansikten! Vår AI-bildgenerator använder generativa kontradiktoriska nätverk, datorseende, maskininlärningsalgoritmer och djupinlärningsalgoritmer. Vår senaste teknik kan skapa realistiska bilder av fejkade ansikten. Skapa en mängd olika ansiktsuttryck med vår AI-bildgenerator.",
   content:<>
@@ -542,6 +553,7 @@ export const translations: Record<string, Translation> = {
     updatedOn: "Оновлено на",
     male: "чоловічий",
     female:"жіноча",
+    keywords:"Ця особа не існує, Генератор випадкових облич, Генератор підроблених облич, Зображення випадкової людини, Зображення обличчя зі штучним інтелектом",
     downloadImage: "завантажити зображення" ,
     description:"Відкрийте для себе можливості ШІ за допомогою нашого генератора зображень облич! Наш генератор зображень ШІ використовує генеративні змагальні мережі, комп'ютерний зір, алгоритми машинного навчання та алгоритми глибокого навчання. Наші новітні технології дозволяють створювати реалістичні зображення фальшивих облич. Створюйте різноманітні вирази обличчя за допомогою нашого генератора зображень зі штучним інтелектом.",
   content:<>
@@ -589,6 +601,7 @@ export const translations: Record<string, Translation> = {
     updatedOn: "Ενημερώθηκε στις",
     male: "Ααρσενικός",
     female:"θηλυκός",
+    keywords:"Αυτό το άτομο δεν υπάρχει, Γεννήτρια τυχαίων προσώπων, Γεννήτρια ψεύτικων προσώπων, Τυχαία εικόνα προσώπου, Εικόνα προσώπου με τεχνητή νοημοσύνη",
     downloadImage: "λήψη εικόνας",
     description:"Ανακαλύψτε τη δύναμη της Τεχνητής Νοημοσύνης με τη Γεννήτρια εικόνων προσώπων Τεχνητής Νοημοσύνης! Η δική μας γεννήτρια εικόνων AI χρησιμοποιεί γεννητικά αντιθετικά δίκτυα, όραση υπολογιστών, αλγόριθμους μηχανικής μάθησης και αλγόριθμους βαθιάς μάθησης. Η πιο πρόσφατη τεχνολογία μας μπορεί να δημιουργήσει ρεαλιστικές εικόνες ψεύτικων προσώπων. Δημιουργήστε μια ποικιλία διαφορετικών εκφράσεων προσώπου με τη γεννήτρια εικόνων AI μας.",
   
@@ -637,6 +650,7 @@ export const translations: Record<string, Translation> = {
     updatedOn: "Diperbarui pada",
     male: "pria",
     female:"perempuan",
+    keywords:"Orang ini tidak ada, Generator wajah acak, Generator wajah palsu, Gambar orang acak, Gambar wajah AI",
     downloadImage: "Unduh Gambar",
     description:"Temukan kekuatan AI dengan Generator Gambar Wajah AI kami! Generator gambar AI kami menggunakan jaringan lawan generatif, visi komputer, algoritma pembelajaran mesin, dan algoritma pembelajaran mendalam. Teknologi terbaru kami dapat membuat gambar realistis dari wajah palsu. Buat berbagai ekspresi wajah yang berbeda dengan generator gambar AI kami.",
   content:
@@ -686,6 +700,7 @@ export const translations: Record<string, Translation> = {
     male: "mann",
     female:"hunn",
     downloadImage: "Last ned bilde",
+    keywords:"Denne personen eksisterer ikke, Tilfeldig ansiktsgenerator, Falsk ansiktsgenerator, Tilfeldig personbilde, AI-ansiktsbilde",
     description:"Oppdag kraften i kunstig intelligens med vår AI-bildegenerator for ansikter! Vår AI-bildegenerator bruker generative kontradiktoriske nettverk, datasyn, maskinlæringsalgoritmer og dyplæringsalgoritmer. Vår nyeste teknologi kan skape realistiske bilder av falske ansikter. Lag en rekke ulike ansiktsuttrykk med vår AI-bildegenerator.",
   content:<>
   <h2> Denne personen finnes ikke - Generator for tilfeldig fotoansikt</h2>
@@ -733,6 +748,7 @@ export const translations: Record<string, Translation> = {
     updatedOn: "更新日",
     male:"男",
     female: "女性",
+    keywords:"この人物は存在しません, ランダム顔生成器, 偽顔生成器, ランダム人物画像, AI顔画像",
     downloadImage: "画像をダウンロード",
     description:"私たちの顔のAI画像ジェネレータでAIの力を発見してください！私たちのAI画像ジェネレーターは、生成的敵対的ネットワーク、コンピュータビジョン、機械学習アルゴリズム、ディープラーニングアルゴリズムを使用しています。 私たちの最新技術は、偽の顔のリアルな画像を作成することができます。私たちのAI画像ジェネレーターで様々な表情を作ってみましょう。",
   content:<>
@@ -780,6 +796,7 @@ export const translations: Record<string, Translation> = {
     updatedOn: "Bijgewerkt op",
     male: "mannelijk",
     female:"vrouwelijk",
+    keywords:"Deze persoon bestaat niet, Generator voor willekeurige gezichten, Generator voor nepgezichten, Willekeurige persoonafbeelding, AI-gegenereerd gezichtsbeeld",
     downloadImage: "Afbeelding Downloaden",
     description:"Ontdek de kracht van AI met onze AI beeldgenerator van gezichten! Onze AI beeldgenerator maakt gebruik van generative adversarial networks, computer vision, machine learning algoritmes en deep learning algoritmes. Onze nieuwste technologie kan realistische afbeeldingen van nepgezichten maken. Creëer verschillende gezichtsuitdrukkingen met onze AI-afbeeldingengenerator.",
     content:<>
@@ -826,6 +843,7 @@ export const translations: Record<string, Translation> = {
     updatedOn: "Posodobljeno na",
     male: "mužský",
     female:"samica",
+    keywords:"Ta oseba ne obstaja, Generator naključnih obrazov, Generator lažnih obrazov, Slika naključne osebe, Slika obraza z umetno inteligenco",
     downloadImage: "stiahnuť Obrázok",
     description:"Odkrijte moč umetne inteligence z našim generatorjem slik obrazov z umetno inteligenco! Naš generator slik obrazov umetne inteligence uporablja generativne nasprotne mreže, računalniški vid, algoritme strojnega učenja in algoritme globokega učenja. Naša najnovejša tehnologija lahko ustvari realistične podobe lažnih obrazov. Z našim generatorjem slik umetne inteligence ustvarite različne izraze obraza.",
     content:<>
@@ -874,6 +892,7 @@ export const translations: Record<string, Translation> = {
     updatedOn: "Uuendatud kuupäeval",
       male: "meessoost",
       female:"naissoost",
+      keywords:"See inimene ei ole olemas, Juhusliku näo generaator, Võltsnäo generaator, Juhusliku inimese pilt, AI-ga loodud näopilt",
       downloadImage: "laadige pilt alla",
       description:"Avastage AI võimsus meie AI nägude pildigeneraatoriga! Meie AI-pildigeneraator kasutab generatiivseid vastandvõrke, arvutinägemist, masinõppe algoritme ja süvaõppe algoritme. Meie uusim tehnoloogia suudab luua realistlikke pilte võltsitud nägudest. Looge meie tehisintellekti pildigeneraatoriga erinevaid näoilminguid.",
   content:<>
@@ -920,6 +939,7 @@ export const translations: Record<string, Translation> = {
     updatedOn: "Aktualizowano",
     male: "Mężczyzna",
     female:"Kobieta",
+    keywords:"Ta osoba nie istnieje, Generator losowych twarzy, Generator fałszywych twarzy, Losowe zdjęcie osoby, Obraz twarzy generowany przez AI",
     downloadImage: "Pobierz Obraz",
     description:"Odkryj moc sztucznej inteligencji dzięki naszemu generatorowi obrazów twarzy! Nasz generator obrazów AI wykorzystuje generatywne sieci przeciwstawne, wizję komputerową, algorytmy uczenia maszynowego i algorytmy głębokiego uczenia. Nasza najnowsza technologia może tworzyć realistyczne obrazy fałszywych twarzy. Twórz różne wyrazy twarzy za pomocą naszego generatora obrazów AI.",
   
@@ -968,6 +988,7 @@ export const translations: Record<string, Translation> = {
     updatedOn: "업데이트된 날짜",
     male:"남성",
     female: "여성",
+    keywords:"이 사람은 존재하지 않습니다, 무작위 얼굴 생성기, 가짜 얼굴 생성기, 무작위 인물 이미지, AI 얼굴 이미지",
     downloadImage: "이미지 다운로드",
     description:"AI 얼굴 이미지 생성기로 AI의 힘을 경험해 보세요! 저희의 AI 이미지 생성기는 생성적 적대 신경망, 컴퓨터 비전, 머신러닝 알고리즘, 딥러닝 알고리즘을 사용합니다. 최신 기술로 가짜 얼굴의 사실적인 이미지를 생성할 수 있습니다. AI 이미지 생성기로 다양한 얼굴 표정을 만들어 보세요.",
   content:<>
@@ -1016,6 +1037,7 @@ export const translations: Record<string, Translation> = {
     updatedOn: "Aktualisiert am",
     male: "männlich",
     female:"weiblich",
+    keywords:"Diese Person existiert nicht, Zufallsgesicht-Generator, Gefälschtes Gesichtsgenerator, Zufälliges Personenbild, KI-Gesichtsbild",
     downloadImage: "Bild Herunterladen",
     description:"Entdecken Sie die Macht der KI mit unserem KI-Bildgenerator für Gesichter! Unser KI-Bildgenerator verwendet generative adversarische Netzwerke, Computer Vision, Algorithmen des maschinellen Lernens und Deep Learning Algorithmen. Unsere neueste Technologie kann realistische Bilder von gefälschten Gesichtern erstellen. Erstellen Sie eine Vielzahl von verschiedenen Gesichtsausdrücken mit unserem KI-Bildgenerator.",
   content:<>
@@ -1063,6 +1085,7 @@ export const translations: Record<string, Translation> = {
       updatedOn: "Päivitetty",
       male: "uros",
       female:"naaras",
+      keywords:"Tätä henkilöä ei ole olemassa, Satunnainen kasvogeneraattori, Väärä kasvogeneraattori, Satunnainen henkilökuva, Tekoälyllä luotu kasvokuva",
       downloadImage: "Lataa Kuva",
       description:"Tutustu tekoälyn voimaan kasvojen tekoälykuvageneraattorin avulla! Tekoälykuvageneraattorimme käyttää generatiivisia vastakkaisverkkoja, tietokonenäköä, koneoppimisalgoritmeja ja syväoppimisalgoritmeja. Uusin teknologiamme voi luoda realistisia kuvia väärennetyistä kasvoista. Luo erilaisia kasvonilmeitä tekoälykuvageneraattorillamme.",
   content:<>
@@ -1110,6 +1133,7 @@ pt:{
   updatedOn: "Atualizado em",
   male:"macho",
   female: "fêmea",
+  keywords:"Esta pessoa não existe, Gerador de rostos aleatórios, Gerador de rostos falsos, Imagem de pessoa aleatória, Imagem de rosto gerado por IA",
   downloadImage: "Baixar Imagem",
   description:"Descubra o poder da IA com nosso gerador de imagens de rostos com IA! Nosso gerador de imagens de IA usa redes adversárias generativas, visão computacional, algoritmos de aprendizado de máquina e algoritmos de aprendizado profundo. Nossa tecnologia mais recente pode criar imagens realistas de rostos falsos. Crie uma variedade de expressões faciais diferentes com nosso gerador de imagens de IA.",
 content:<>
