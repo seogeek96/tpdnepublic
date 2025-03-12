@@ -183,7 +183,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Set the title and description dynamically */}
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
-
+        <meta name="keywords" content={metadata.keywords} />
         {/* Preload critical fonts for faster rendering */}
         <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
 
