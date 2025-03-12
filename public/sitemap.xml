@@ -1,46 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-   <!-- Homepage (English) -->
+<urlset xmlns="http://www.sitemaps.org">
    <url>
       <loc>https://www.thispersondoesnotexist.cc/</loc>
       <lastmod>2025-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Arabic -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/ar</loc>
       <lastmod>2024-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Bulgarian -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/bg</loc>
       <lastmod>2025-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Portuguese -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/pt</loc>
       <lastmod>2024-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Chinese -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/zh</loc>
       <lastmod>2024-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- German -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/de</loc>
       <lastmod>2025-03-02</lastmod>
@@ -63,120 +52,90 @@
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Finnish -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/fi</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Greek -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/el</loc>
       <lastmod>2024-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Indonesian -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/id</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Italian -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/it</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Japanese -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/ja</loc>
       <lastmod>2024-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Korean -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/ko</loc>
       <lastmod>2024-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Dutch -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/nl</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Norwegian -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/no</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Polish -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/pl</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Romanian -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/ro</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Russian -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/ru</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Slovenian -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/sl</loc>
       <lastmod>2024-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Swedish -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/sv</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Turkish -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/tr</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
-
-   <!-- Ukrainian -->
    <url>
       <loc>https://www.thispersondoesnotexist.cc/uk</loc>
       <lastmod>2024-03-03</lastmod>
