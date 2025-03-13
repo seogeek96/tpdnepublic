@@ -2,8 +2,15 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import HomePage from "@/components/Homepage";
+import { notFound } from "next/navigation";
 
-// Define the type for language mappings
+// Define valid languages (same as your layout metadata keys)
+const VALID_LANGUAGES = new Set([
+  "en", "es", "ar", "bg", "ru", "it", "fr", "tr", "ro", "zh",
+  "sv", "uk", "el", "id", "no", "ja", "nl", "sl", "et", "pl",
+  "ko", "de", "fi", "pt"
+]);
+
 type LanguageMap = {
   [key: string]: string;
 };
@@ -13,59 +20,27 @@ export default function LanguagePage() {
   const pathname = usePathname();
   const params = useParams();
 
-  // ✅ Type-safe language extraction
+  // Get mapped language
   const getMappedLanguage = useCallback((lang: string | string[] | undefined): string => {
-    if (!lang) return "en"; // Default to English if undefined
-
-    // Ensure lang is a string
+    if (!lang) return "en";
     const rawLang = Array.isArray(lang) ? lang[0] : lang;
-
-    // Define language mappings with explicit types
+    
     const languageMap: LanguageMap = {
-      ae: "ar",
-      br: "pt",
-      cn: "zh",
-      gr: "el",
-      jp: "ja",
-      kr: "ko",
-      si: "sl",
-      ua: "uk",
+      ae: "ar", br: "pt", cn: "zh", gr: "el", 
+      jp: "ja", kr: "ko", si: "sl", ua: "uk"
     };
 
-    // Use mapped value or fallback to rawLang
     return languageMap[rawLang] || rawLang;
   }, []);
 
-  // ✅ Safe language extraction
   const selectedLanguage = getMappedLanguage(params?.language);
 
-  // Redirect legacy URLs to their new versions
-  useEffect(() => {
-    if (!params?.language) return; // Skip if no language param
+  // Check if language is valid
+  if (!VALID_LANGUAGES.has(selectedLanguage)) {
+    notFound();
+  }
 
-    // Ensure language is a string
-    const rawLang = Array.isArray(params.language) ? params.language[0] : params.language;
-
-    // Define redirect mappings
-    const redirectMap: LanguageMap = {
-      ae: "ar",
-      br: "pt",
-      cn: "zh",
-      gr: "el",
-      jp: "ja",
-      kr: "ko",
-      si: "sl",
-      ua: "uk",
-    };
-
-    // Redirect if the language is in the redirect map
-    if (redirectMap[rawLang]) {
-      const newPath = pathname.replace(`/${rawLang}/`, `/${redirectMap[rawLang]}/`);
-      router.replace(newPath);
-    }
-  }, [params, pathname, router]);
-
-  // Rest of your existing logic...
+  // Rest of your existing component logic
   const [imageUrl, setImageUrl] = useState("");
   const [gender, setGender] = useState("male");
   const [buttonText, setButtonText] = useState("Download Image");
@@ -119,7 +94,6 @@ export default function LanguagePage() {
 
   return (
     <div>
-      {/* Pass the selectedLanguage to the HomePage component */}
       <HomePage
         language={selectedLanguage}
         imageUrl={imageUrl}

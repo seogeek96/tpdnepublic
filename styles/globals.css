@@ -15,7 +15,11 @@ body {
   max-width: 1440px; /* Added base max-width */
   margin: 0 auto; /* Center body content */
 }
-
+#__next {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 /* Desktop First Layout (1440-1201px) */
 .layout-Container {
   width: 100%;

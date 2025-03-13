@@ -9,12 +9,19 @@ export const metadata = {
 
 export default function NotFound() {
   return (
-    <div style={{ textAlign: "center", padding: "50px" }}>
-      <h1 style={{ fontSize: "2.5rem", marginBottom: "20px" }}>404 - Page Not Found</h1>
+    <div style={{ textAlign: "center", padding: "50px", flexGrow: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+      <h1 style={{ fontSize: "2.5rem", marginBottom: "30px" }}>404 - Page Not Found</h1>
       <p style={{ fontSize: "1.2rem", marginBottom: "30px" }}>
         The page you are looking for does not exist.
       </p>
-      <Link href="/" style={{ color: "white", textDecoration: "underline" }}>
+      <Link 
+        href="/" 
+        style={{ 
+          color: "white", 
+          textDecoration: "underline", 
+          marginBottom: "350px" // Add space below the link
+        }}
+      >
         Go back to the homepage
       </Link>
     </div>
