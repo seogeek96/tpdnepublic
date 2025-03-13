@@ -10,7 +10,7 @@ export async function GET(request: Request) {
 
   const bucketBaseUrl = "https://thisperson.s3.ap-southeast-2.amazonaws.com";
   const folder = `${gender.toLowerCase()}/${gender.toLowerCase()}`;
-  const randomIndex = Math.floor(Math.random() * 133) + 1; // Random index between 1 and 133
+  const randomIndex = Math.floor(Math.random() * 573) + 1; // Random index between 1 and 133
   const imageUrl = `${bucketBaseUrl}/${folder}/image+(${randomIndex}).jpeg`;
 
   try {

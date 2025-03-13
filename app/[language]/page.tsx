@@ -16,8 +16,6 @@ type LanguageMap = {
 };
 
 export default function LanguagePage() {
-  const router = useRouter();
-  const pathname = usePathname();
   const params = useParams();
 
   // Get mapped language
