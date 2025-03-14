@@ -4,20 +4,26 @@ import styles from "../../styles/PrivacyPolicy.module.css"; // Import the CSS Mo
 import "../../styles/globals.css";
 
 const PrivacyPolicy = () => {
+  const metaDescription = "Privacy policy of this person does not exist - We protect users data and comply with all laws.";
+  const pageTitle = "Privacy Policy of This Person Does Not Exist";
   return (
     <>
       <Head>
-        <meta name="robots" content="noindex, nofollow" /> {/* Add noindex, nofollow meta tag */}
+      <title>{pageTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={metaDescription} />
       </Head>
 
       <div className={styles.container}>
         <h1>Privacy Policy – This Person Does Not Exist</h1>
-        <p>Updated on December 20th, 2023</p>
+        <p>Updated on March 12th, 2025</p>
 
         <p>
           At This Person Does Not Exist, accessible from{' '}
-          <a href="https://this person does not exist.cc/" className={styles.link}>
-            https://this person does not exist.cc/
+          <a href="https://thispersondoesnotexist.cc/" className={styles.link}>
+            https://thispersondoesnotexist.cc/
           </a>
           , one of our top priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by This Person Does Not Exist and how we use it.
         </p>

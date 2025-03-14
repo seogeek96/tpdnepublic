@@ -152,6 +152,26 @@ const metadataByLang: { [key: string]: { title: string; description: string; key
   },
 };
 
+
+// Define metadata for specific pages
+const pageMetadata: { [key: string]: { title: string; description: string; keywords: string } } = {
+  "/contact-us": {
+    title: "Contact Us - This Person Does Not Exist",
+    description: "Contact this person does not exist. Contact us using the form below or via email on this page given below.",
+    keywords: "Contact us, This person does not exist contact, AI face generator contact",
+  },
+  "/privacy-policy": {
+    title: "Privacy Policy of This Person Does Not Exist",
+    description: "Privacy policy of this person does not exist - We protect users data and comply with all laws.",
+    keywords: "Privacy policy, This person does not exist privacy, AI face generator privacy",
+  },
+  "/algorithm": {
+    title: "AI Face Generation Algorithm | StyleGAN/StyleGAN2 Explained | This Person Does Not Exist",
+    description: "Explore NVIDIA's StyleGAN and StyleGAN2 algorithms powering our AI-generated human faces. Technical details on convolutional networks, noise injection, and public dataset availability. Updated January 2025.",
+    keywords: "AI face generation algorithm, StyleGAN, StyleGAN2, This person does not exist algorithm",
+  },
+};
+
 // ✅ Root Layout Component
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -177,20 +197,41 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   // Get metadata for the selected language
   const metadata = metadataByLang[selectedLanguage] || metadataByLang.en;
 
+  // Construct the full path for the current page (e.g., /en/contact-us)
+  const pagePath = `/${selectedLanguage}${pathname.split("/").slice(2).join("/")}`;
+
+  // Check if the current path matches a specific page
+  const pageMeta = pageMetadata[pagePath];
+
+  // Debugging
+  console.log("Current Pathname:", pathname);
+  console.log("Selected Language:", selectedLanguage);
+  console.log("Page Path:", pagePath);
+  console.log("Page Metadata:", pageMeta);
+
   return (
     <html lang={selectedLanguage}>
       <head>
-        {/* Set the title and description dynamically */}
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        <meta name="keywords" content={metadata.keywords} />
+        {/* Apply page-specific metadata if available, otherwise use default metadata */}
+        {pageMeta ? (
+          <>
+            <title>{pageMeta.title}</title>
+            <meta name="description" content={pageMeta.description} />
+            <meta name="keywords" content={pageMeta.keywords} />
+          </>
+        ) : (
+          <>
+            <title>{metadata.title}</title>
+            <meta name="description" content={metadata.description} />
+            <meta name="keywords" content={metadata.keywords} />
+          </>
+        )}
+
+        {/* Always include these meta tags */}
         <meta name="google-site-verification" content="noDxY7-Iw_ArIQTqmhnxSTTwPxM1R78uf9FxSnmJ_e0" />
         <meta name="yandex-verification" content="5424a42e25dece6b" />
         <meta name="msvalidate.01" content="394BAB3426D3AA6C5DF8FE0E8A95469B" />
-        {/* Preload critical fonts for faster rendering */}
         <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-
-        {/* Inline critical CSS to prevent render-blocking */}
         <style>
           {`
             body {
@@ -209,7 +250,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <MainLayout lang={selectedLanguage}>{children}</MainLayout>
 
-        {/* ✅ Defer non-critical scripts */}
+        {/* Defer non-critical scripts */}
         <Script
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2712755007538822"
           strategy="lazyOnload"
