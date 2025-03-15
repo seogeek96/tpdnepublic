@@ -5,7 +5,9 @@ import "@/styles/globals.css";
 import MainLayout from "./MainLayout";
 import Script from "next/script";
 
+// Initialize the Inter font
 const inter = Inter({ subsets: ["latin"], display: "swap" });
+
 // Define metadata for each language
 const metadataByLang: { [key: string]: { title: string; description: string; keywords: string; } } = {
   en: {
@@ -312,7 +314,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
 
-      <body>
+      {/* Apply the Inter font to the body */}
+      <body className={inter.className}>
         <MainLayout lang={selectedLanguage}>{children}</MainLayout>
 
         {/* Defer non-critical scripts */}
