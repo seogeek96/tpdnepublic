@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({ selectedLanguage }) => {
     <div className={styles.header}>
       <Image
         src="/this person does not exist logo.png"
-        alt="Website Logo"
+        alt="this person does not exist Logo"
         width={500}
         height={300}
         className={styles.logo}

@@ -6,7 +6,6 @@ import MainLayout from "./MainLayout";
 import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
-
 // Define metadata for each language
 const metadataByLang: { [key: string]: { title: string; description: string; keywords: string; } } = {
   en: {
@@ -161,8 +160,8 @@ const pageMetadata: { [key: string]: { title: string; description: string; keywo
     keywords: "Contact us, This person does not exist contact, AI face generator contact",
   },
   "/privacy-policy": {
-    title: "Privacy Policy of This Person Does Not Exist",
-    description: "Privacy policy of this person does not exist - We protect users data and comply with all laws.",
+    title: "Privacy Policy - This Person Does Not Exist",
+    description: "Read our privacy policy to understand how we handle your data.",
     keywords: "Privacy policy, This person does not exist privacy, AI face generator privacy",
   },
   "/algorithm": {
@@ -172,7 +171,61 @@ const pageMetadata: { [key: string]: { title: string; description: string; keywo
   },
 };
 
-// ✅ Root Layout Component
+// Function to generate JSON-LD structured data with pretty-printing
+const generateSchema = (pagePath: string, metadata: { title: string; description: string }) => {
+  const baseUrl = "https://thispersondoesnotexist.cc";
+
+  // Default schema for the homepage
+  if (pagePath === "/") {
+    return JSON.stringify(
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": metadata.title,
+        "description": metadata.description,
+        "url": baseUrl,
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": `${baseUrl}/search?q={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
+      },
+      null, // Replacer function (null for no filtering)
+      2 // Number of spaces for indentation
+    );
+  }
+
+  // Schema for other pages
+  return JSON.stringify(
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": metadata.title,
+      "description": metadata.description,
+      "url": `${baseUrl}${pagePath}`,
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": baseUrl,
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": metadata.title,
+            "item": `${baseUrl}${pagePath}`,
+          },
+        ],
+      },
+    },
+    null, // Replacer function (null for no filtering)
+    2 // Number of spaces for indentation
+  );
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
@@ -203,11 +256,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   // Check if the current path matches a specific page
   const pageMeta = pageMetadata[pagePath];
 
-  // Debugging
-  console.log("Current Pathname:", pathname);
-  console.log("Selected Language:", selectedLanguage);
-  console.log("Page Path:", pagePath);
-  console.log("Page Metadata:", pageMeta);
+  // Generate JSON-LD structured data
+  const schemaData = generateSchema(pagePath, pageMeta || metadata);
 
   return (
     <html lang={selectedLanguage}>
@@ -218,33 +268,48 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <title>{pageMeta.title}</title>
             <meta name="description" content={pageMeta.description} />
             <meta name="keywords" content={pageMeta.keywords} />
+            {/* Open Graph Meta Tags */}
+            <meta property="og:title" content={pageMeta.title} />
+            <meta property="og:description" content={pageMeta.description} />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content={`https://thispersondoesnotexist.cc${pagePath}`} />
+            <meta property="og:image" content="https://thispersondoesnotexist.cc/og-image.png" />
+            {/* Twitter Card Meta Tags */}
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={pageMeta.title} />
+            <meta name="twitter:description" content={pageMeta.description} />
+            <meta name="twitter:image" content="https://thispersondoesnotexist.cc/og-image.png" />
           </>
         ) : (
           <>
             <title>{metadata.title}</title>
             <meta name="description" content={metadata.description} />
             <meta name="keywords" content={metadata.keywords} />
+            {/* Open Graph Meta Tags */}
+            <meta property="og:title" content={metadata.title} />
+            <meta property="og:description" content={metadata.description} />
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content={`https://thispersondoesnotexist.cc/${selectedLanguage}`} />
+            <meta property="og:image" content="https://thispersondoesnotexist.cc/og-image.png" />
+            {/* Twitter Card Meta Tags */}
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={metadata.title} />
+            <meta name="twitter:description" content={metadata.description} />
+            <meta name="twitter:image" content="https://thispersondoesnotexist.cc/og-image.png" />
           </>
         )}
+
+        {/* Add JSON-LD structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: schemaData }}
+        />
 
         {/* Always include these meta tags */}
         <meta name="google-site-verification" content="noDxY7-Iw_ArIQTqmhnxSTTwPxM1R78uf9FxSnmJ_e0" />
         <meta name="yandex-verification" content="5424a42e25dece6b" />
         <meta name="msvalidate.01" content="394BAB3426D3AA6C5DF8FE0E8A95469B" />
         <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <style>
-          {`
-            body {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              min-height: 100vh;
-              text-align: center;
-              margin: 0;
-              font-family: ${inter.className}, sans-serif;
-            }
-          `}
-        </style>
       </head>
 
       <body>
