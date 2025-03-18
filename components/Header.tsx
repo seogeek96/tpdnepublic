@@ -40,6 +40,7 @@ const Header: React.FC<HeaderProps> = ({ selectedLanguage }) => {
     { code: "sl", name: "Slovenščina", flag: "si" }, // Updated from si to sl
     { code: "pl", name: "Polskie", flag: "pl" },
     { code: "fi", name: "Finnish", flag: "fi" },
+    { code: "hi", name: "Hindi", flag: "in" },
     { code: "en", name: "English", flag: "gb" },
   ];
 

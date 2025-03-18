@@ -8,7 +8,7 @@ import { notFound } from "next/navigation";
 const VALID_LANGUAGES = new Set([
   "en", "es", "ar", "bg", "ru", "it", "fr", "tr", "ro", "zh",
   "sv", "uk", "el", "id", "no", "ja", "nl", "sl", "et", "pl",
-  "ko", "de", "fi", "pt"
+  "ko", "de", "fi", "pt","hi"
 ]);
 
 type LanguageMap = {

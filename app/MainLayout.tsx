@@ -28,6 +28,11 @@ export default function MainLayout({ children, lang }: MainLayoutProps) {
       title: "Cette Personne N'Existe Pas - Visages Générés par IA",
       keywords: ["visages générés par IA", "personne fictive", "images IA", "outils de design"],
     },
+    hi:{
+      
+title: "यह आदमी मौजूद नहीं है - नकली चेहरा जनरेटर (2025)",
+keywords:["यह आदमी मौजूद नहीं है - नकली चेहरा जनरेटर - नकली ऐ शकल - नकली शकल डाउनलोड - चेहरा की तस्वीर बनानी"],
+    }
   };
 
   // Fallback to English if the language is not found

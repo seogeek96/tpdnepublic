@@ -151,6 +151,11 @@ const metadataByLang: { [key: string]: { title: string; description: string; key
     keywords:"Esta pessoa não existe, Gerador de rostos aleatórios, Gerador de rostos falsos, Imagem de pessoa aleatória, Imagem de rosto gerado por IA",
 
   },
+  hi:{
+title: "यह आदमी मौजूद नहीं है - नकली चेहरा जनरेटर (2025)",
+description:"यह व्यक्ति अस्तित्व में नहीं है, यह चेहरों का एक AI इमेज जनरेटर है। हमारी नवीनतम तकनीक नकली चेहरे की छवियाँ बनाती है। हमारे AI इमेज जनरेटर के साथ विभिन्न प्रकार के चेहरे के भाव बनाएँ।",
+keywords:" यह आदमी मौजूद नहीं है - नकली चेहरा जनरेटर - नकली ऐ शकल - नकली शकल डाउनलोड - चेहरा की तस्वीर बनानी",
+  },
 };
 
 
