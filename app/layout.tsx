@@ -311,6 +311,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: schemaData }}
         />
+        <link rel="icon" href="/favicon.png" type="image/png" />
 
         {/* Always include these meta tags */}
         <meta name="google-site-verification" content="noDxY7-Iw_ArIQTqmhnxSTTwPxM1R78uf9FxSnmJ_e0" />
