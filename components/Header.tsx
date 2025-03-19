@@ -1,11 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { usePathname, useRouter } from "next/navigation"; // Removed useParams
+import { usePathname, useRouter } from "next/navigation";
 import styles from "../styles/Header.module.css";
 import Image from "next/image";
 import "flag-icons/css/flag-icons.min.css";
 
-// Define the props interface
 interface HeaderProps {
   selectedLanguage: string;
 }
@@ -15,7 +14,6 @@ const Header: React.FC<HeaderProps> = ({ selectedLanguage }) => {
   const pathname = usePathname();
   const [showDropdown, setShowDropdown] = useState(false);
 
-  // Language configuration
   const languages = [
     { code: "bg", name: "български", flag: "bg" },
     { code: "ar", name: "العربية", flag: "sa" },
@@ -44,23 +42,14 @@ const Header: React.FC<HeaderProps> = ({ selectedLanguage }) => {
     { code: "en", name: "English", flag: "gb" },
   ];
 
-  // Handle language switching
-  const handleLanguageChange = (languageCode: string) => {
-    const newPath = getLocalizedPath(pathname, languageCode);
-    router.push(newPath);
-    setShowDropdown(false);
-  };
 
-  // Build proper URL paths
+
+  // Updated to handle href generation
   const getLocalizedPath = (currentPath: string, newLang: string) => {
     const pathSegments = currentPath.split("/").filter(Boolean);
-
-    // Remove existing language prefix if it exists
     if (languages.some((lang) => lang.code === pathSegments[0])) {
       pathSegments.shift();
     }
-
-    // English uses root path, others use language prefix
     return newLang === "en"
       ? `/${pathSegments.join("/")}`
       : `/${newLang}/${pathSegments.join("/")}`;
@@ -70,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ selectedLanguage }) => {
     <div className={styles.header}>
       <Image
         src="/this person does not exist logo.png"
-        alt="this person does not exist Logo"
+        alt="logo"
         width={500}
         height={300}
         className={styles.logo}
@@ -97,17 +86,21 @@ const Header: React.FC<HeaderProps> = ({ selectedLanguage }) => {
 
         {showDropdown && (
           <div className={styles.dropdownContent} role="menu">
-            {languages.map((lang) => (
-              <button
-                key={lang.code}
-                onClick={() => handleLanguageChange(lang.code)}
-                className={styles.languageItem}
-                role="menuitem"
-              >
-                <span className={`fi fi-${lang.flag} ${styles.flag}`} />
-                <span className={styles.languageName}>{lang.name}</span>
-              </button>
-            ))}
+            {languages.map((lang) => {
+              const href = getLocalizedPath(pathname, lang.code);
+              return (
+                <a
+                  key={lang.code}
+                  href={href}
+                  className={styles.languageItem}
+                  role="menuitem"
+                  onClick={() => setShowDropdown(false)}
+                >
+                  <span className={`fi fi-${lang.flag} ${styles.flag}`} />
+                  <span className={styles.languageName}>{lang.name}</span>
+                </a>
+              );
+            })}
           </div>
         )}
       </div>
