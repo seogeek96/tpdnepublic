@@ -330,7 +330,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           strategy="lazyOnload"
           crossOrigin="anonymous"
         />
-        // Language Alternates
 <link rel="alternate" href="https://thispersondoesnotexist.cc/en" hrefLang="en" />
 <link rel="alternate" href="https://thispersondoesnotexist.cc/ar" hrefLang="ar" />
 <link rel="alternate" href="https://thispersondoesnotexist.cc/bg" hrefLang="bg" />
