@@ -330,6 +330,32 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           strategy="lazyOnload"
           crossOrigin="anonymous"
         />
+        // Language Alternates
+<link rel="alternate" href="https://thispersondoesnotexist.cc/en" hrefLang="en" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/ar" hrefLang="ar" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/bg" hrefLang="bg" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/de" hrefLang="de" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/el" hrefLang="el" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/es" hrefLang="es" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/et" hrefLang="et" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/fr" hrefLang="fr" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/hi" hrefLang="hi" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/id" hrefLang="id" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/it" hrefLang="it" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/ja" hrefLang="ja" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/ko" hrefLang="ka" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/nl" hrefLang="nl" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/no" hrefLang="no" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/pl" hrefLang="pl" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/pt" hrefLang="pt" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/ro" hrefLang="ro" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/ru" hrefLang="ru" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/fi" hrefLang="sk" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/sl" hrefLang="sl" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/sv" hrefLang="sv" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/tr" hrefLang="tr" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/uk" hrefLang="uk" />
+<link rel="alternate" href="https://thispersondoesnotexist.cc/zh" hrefLang="zh" />
         <Script
           id="canonical-script"
           strategy="afterInteractive"

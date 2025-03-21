@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
       <loc>https://www.thispersondoesnotexist.cc/</loc>
       <lastmod>2025-03-03</lastmod>
@@ -7,140 +7,151 @@
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/ar</loc>
+      <loc>https://www.thispersondoesnotexist.cc/ar/</loc>
       <lastmod>2024-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/bg</loc>
+      <loc>https://www.thispersondoesnotexist.cc/bg/</loc>
       <lastmod>2025-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/pt</loc>
+      <loc>https://www.thispersondoesnotexist.cc/pt/</loc>
       <lastmod>2024-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/zh</loc>
+      <loc>https://www.thispersondoesnotexist.cc/zh/</loc>
       <lastmod>2024-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/de</loc>
+      <loc>https://www.thispersondoesnotexist.cc/de/</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
 
-   <!-- Spanish -->
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/es</loc>
+      <loc>https://www.thispersondoesnotexist.cc/es/</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
 
-   <!-- Estonian -->
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/et</loc>
+      <loc>https://www.thispersondoesnotexist.cc/et/</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/fi</loc>
+      <loc>https://www.thispersondoesnotexist.cc/fi/</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/el</loc>
+      <loc>https://www.thispersondoesnotexist.cc/el/</loc>
       <lastmod>2024-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/id</loc>
+      <loc>https://www.thispersondoesnotexist.cc/id/</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/it</loc>
+      <loc>https://www.thispersondoesnotexist.cc/it/</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/ja</loc>
+      <loc>https://www.thispersondoesnotexist.cc/ja/</loc>
       <lastmod>2024-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/ko</loc>
+      <loc>https://www.thispersondoesnotexist.cc/ko/</loc>
       <lastmod>2024-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/nl</loc>
+      <loc>https://www.thispersondoesnotexist.cc/nl/</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/no</loc>
+      <loc>https://www.thispersondoesnotexist.cc/no/</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/pl</loc>
+      <loc>https://www.thispersondoesnotexist.cc/pl/</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/ro</loc>
+      <loc>https://www.thispersondoesnotexist.cc/ro/</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/ru</loc>
+      <loc>https://www.thispersondoesnotexist.cc/ru/</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/sl</loc>
+      <loc>https://www.thispersondoesnotexist.cc/sl/</loc>
       <lastmod>2024-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/sv</loc>
+      <loc>https://www.thispersondoesnotexist.cc/sv/</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/tr</loc>
+      <loc>https://www.thispersondoesnotexist.cc/tr/</loc>
       <lastmod>2025-03-02</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://www.thispersondoesnotexist.cc/uk</loc>
+      <loc>https://www.thispersondoesnotexist.cc/uk/</loc>
       <lastmod>2024-03-03</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
 
+<url>
+      <loc>https://www.thispersondoesnotexist.cc/hi/</loc>
+      <lastmod>2024-03-03</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   <url>
+      <loc>https://www.thispersondoesnotexist.cc/fr/</loc>
+      <lastmod>2024-03-03</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   
 </urlset>

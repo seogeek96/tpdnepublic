@@ -1,5 +1,6 @@
 User-agent: *
-Disallow:/api/image
+Allow: /
+Disallow: /api/image
 Disallow: /male/
 Disallow: /female/
 Sitemap: https://www.thispersondoesnotexist.cc/sitemap.xml
