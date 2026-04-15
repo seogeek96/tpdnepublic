@@ -1,73 +1,97 @@
 "use client"; // Mark as a Client Component
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import HomePage from "@/components/Homepage";
+
+const IMAGE_COUNT = 4;
+const FALLBACK_IMAGE_URL = "";
+
+type GeneratedImage = {
+  id: string;
+  gender: string;
+  url: string;
+  downloadUrl?: string;
+};
+
+const createPlaceholderImages = (selectedGender: string, prefix: string) => {
+  return Array.from({ length: IMAGE_COUNT }, (_, index) => ({
+    id: `${prefix}-${selectedGender}-${index + 1}`,
+    gender: selectedGender,
+    url: FALLBACK_IMAGE_URL,
+  }));
+};
 
 export default function Home() {
   const [selectedLanguage] = useState("en");
-  const [imageUrl, setImageUrl] = useState("");
+  const [images, setImages] = useState<GeneratedImage[]>([]);
   const [gender, setGender] = useState("male");
   const [buttonText, setButtonText] = useState("Download Image");
-  const fetchRandomImage = async (selectedGender: string) => {
-    try {
-      // Add a cache-busting query parameter (timestamp)
-      const timestamp = Date.now();
-      const apiUrl = `/api/image?gender=${selectedGender}&t=${timestamp}`;
-      const response = await fetch(apiUrl);
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      
-      // Create a blob URL for the image
-      const imageBlob = await response.blob();
-      
-      const newImageUrl = URL.createObjectURL(imageBlob);
+  const requestIdRef = useRef(0);
 
-      // Revoke the previous blob URL to free up memory
-      if (imageUrl) {
-        URL.revokeObjectURL(imageUrl);
+  const fetchRandomImage = useCallback(async (selectedGender: string) => {
+    const requestId = requestIdRef.current + 1;
+    requestIdRef.current = requestId;
+    setImages(createPlaceholderImages(selectedGender, `loading-${requestId}`));
+
+    try {
+      const timestamp = Date.now();
+      const apiUrl = `/api/image?gender=${selectedGender}&count=${IMAGE_COUNT}&t=${timestamp}`;
+      const response = await fetch(apiUrl);
+
+      if (requestId !== requestIdRef.current) return;
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => null);
+        console.error("Image API request failed:", {
+          status: response.status,
+          error: errorData?.error,
+          details: errorData?.details,
+        });
+        setImages(createPlaceholderImages(selectedGender, "fallback"));
+        return;
       }
 
-      setImageUrl(newImageUrl); // Set the new blob URL
-    } catch (error) {
-      console.error("Error fetching image:", error);
-      setImageUrl("https://via.placeholder.com/300?text=Image+Not+Found");
-    }
-  };
+      const data = await response.json();
+      const signedImages = Array.isArray(data.images) ? data.images : [];
 
-  const downloadImage = () => {
-    if (!imageUrl) {
+      if (requestId !== requestIdRef.current) return;
+
+      setImages(signedImages);
+    } catch (error) {
+      if (requestId !== requestIdRef.current) return;
+
+      console.error("Error fetching images:", error);
+      setImages(createPlaceholderImages(selectedGender, "fallback"));
+    }
+  }, []);
+
+  const downloadImage = (imageIndex = 0) => {
+    const selectedImageUrl = images[imageIndex]?.downloadUrl || images[imageIndex]?.url;
+
+    if (!selectedImageUrl) {
       console.error("No image to download");
       return;
     }
-  
+
     const link = document.createElement("a");
-    link.href = imageUrl; // Use the existing blob URL
-    link.download = `image_${gender}.jpeg`;
+    link.href = selectedImageUrl;
+    link.download = `this-person-does-not-exist_${gender}_${images[imageIndex]?.id || imageIndex + 1}.jpg`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  
+
     setButtonText("Download Complete");
     setTimeout(() => setButtonText("Download Image"), 3000);
   };
-  
-  // Fetch a new image whenever the language or gender changes
-  useEffect(() => {
-    fetchRandomImage(gender);
-  }, [gender]);
 
-  // Clean up the blob URL when the component unmounts
   useEffect(() => {
-    return () => {
-      if (imageUrl) {
-        URL.revokeObjectURL(imageUrl);
-      }
-    };
-  }, [imageUrl]);
+    fetchRandomImage("male");
+  }, [fetchRandomImage]);
 
   return (
     <div>
       <HomePage
         language={selectedLanguage}
-        imageUrl={imageUrl}
+        images={images}
         downloadImage={downloadImage}
         buttonText={buttonText}
         setGender={setGender}

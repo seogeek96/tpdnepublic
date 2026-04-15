@@ -57,7 +57,9 @@ const Header: React.FC<HeaderProps> = ({ selectedLanguage }) => {
       : `/${newLang}/${pathSegments.join("/")}`;
 
     // Remove trailing slash if it exists
-    return newPath.endsWith("/") ? newPath.slice(0, -1) : newPath;
+    const normalizedPath = newPath.endsWith("/") ? newPath.slice(0, -1) : newPath;
+
+    return normalizedPath || "/";
   };
 
   return (

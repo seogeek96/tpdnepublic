@@ -18,7 +18,13 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ["via.placeholder.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "tpdne.s3.us-east-1.amazonaws.com",
+        pathname: "/**",
+      },
+    ],
   },
 
 };
