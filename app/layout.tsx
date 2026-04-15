@@ -265,6 +265,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   // Generate JSON-LD structured data
   const schemaData = generateSchema(pagePath, pageMeta || metadata);
+  const shouldLoadAds = process.env.NODE_ENV === "production";
 
   return (
     <html lang={selectedLanguage}>
@@ -317,44 +318,45 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="google-site-verification" content="noDxY7-Iw_ArIQTqmhnxSTTwPxM1R78uf9FxSnmJ_e0" />
         <meta name="yandex-verification" content="5424a42e25dece6b" />
         <meta name="msvalidate.01" content="394BAB3426D3AA6C5DF8FE0E8A95469B" />
-        <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/en" hrefLang="en" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/ar" hrefLang="ar" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/bg" hrefLang="bg" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/de" hrefLang="de" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/el" hrefLang="el" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/es" hrefLang="es" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/et" hrefLang="et" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/fr" hrefLang="fr" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/hi" hrefLang="hi" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/id" hrefLang="id" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/it" hrefLang="it" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/ja" hrefLang="ja" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/ko" hrefLang="ko" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/nl" hrefLang="nl" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/no" hrefLang="no" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/pl" hrefLang="pl" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/pt" hrefLang="pt" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/ro" hrefLang="ro" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/ru" hrefLang="ru" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/fi" hrefLang="fi" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/sl" hrefLang="sl" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/sv" hrefLang="sv" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/tr" hrefLang="tr" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/uk" hrefLang="uk" />
+        <link rel="alternate" href="https://thispersondoesnotexist.cc/zh" hrefLang="zh" />
       </head>
 
       {/* Apply the Inter font to the body */}
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning>
         <MainLayout lang={selectedLanguage}>{children}</MainLayout>
 
         {/* Defer non-critical scripts */}
-        <Script
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2712755007538822"
-          strategy="lazyOnload"
-          crossOrigin="anonymous"
-        />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/en" hrefLang="en" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/ar" hrefLang="ar" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/bg" hrefLang="bg" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/de" hrefLang="de" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/el" hrefLang="el" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/es" hrefLang="es" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/et" hrefLang="et" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/fr" hrefLang="fr" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/hi" hrefLang="hi" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/id" hrefLang="id" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/it" hrefLang="it" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/ja" hrefLang="ja" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/ko" hrefLang="ka" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/nl" hrefLang="nl" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/no" hrefLang="no" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/pl" hrefLang="pl" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/pt" hrefLang="pt" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/ro" hrefLang="ro" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/ru" hrefLang="ru" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/fi" hrefLang="sk" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/sl" hrefLang="sl" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/sv" hrefLang="sv" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/tr" hrefLang="tr" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/uk" hrefLang="uk" />
-<link rel="alternate" href="https://thispersondoesnotexist.cc/zh" hrefLang="zh" />
+        {shouldLoadAds && (
+          <Script
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2712755007538822"
+            strategy="lazyOnload"
+            crossOrigin="anonymous"
+          />
+        )}
         <Script
           id="canonical-script"
           strategy="afterInteractive"

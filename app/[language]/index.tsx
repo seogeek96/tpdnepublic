@@ -34,7 +34,7 @@ export default function LanguageIndexPage() {
       {/* Render the HomePage component with language-specific content */}
       <HomePage
         language={metadata.lang}
-        imageUrl={""} // Pass the image URL if needed
+        images={[]} // Pass the images if needed
         downloadImage={() => {}} // Pass the download function if needed
         buttonText="Download Image" // Pass the button text if needed
         setGender={() => {}} // Pass the gender setter if needed

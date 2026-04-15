@@ -16,8 +16,13 @@ export interface Translation {
 
 export interface HomePageProps {
   language: string;
-  imageUrl: string;
-  downloadImage: () => void;
+  images: Array<{
+    id: string;
+    gender: string;
+    url: string;
+    downloadUrl?: string;
+  }>;
+  downloadImage: (imageIndex?: number) => void;
   buttonText: string;
   setGender: (gender: string) => void;
   fetchRandomImage: (gender: string) => void;
