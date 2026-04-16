@@ -82,5 +82,8 @@
 }
 .list
 {
-  text-align: left;
+  margin-left: 30px;
+  @media only screen and (min-width: 652px) {
+    margin-left: 35px;
+  }
 }

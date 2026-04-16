@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head'; // Import the Head component
 import styles from "../../styles/PrivacyPolicy.module.css"; // Import the CSS Module
 import "../../styles/globals.css";
+import { SITE_DATE } from "@/utils/site-date";
 
 const PrivacyPolicy = () => {
   const metaDescription = "Privacy policy of this person does not exist - We protect users data and comply with all laws.";
@@ -18,7 +19,7 @@ const PrivacyPolicy = () => {
 
       <div className={styles.container}>
         <h1>Privacy Policy – This Person Does Not Exist</h1>
-        <p>Updated on March 12th, 2025</p>
+        <p>Updated on {SITE_DATE}</p>
 
         <p>
           At This Person Does Not Exist, accessible from{' '}

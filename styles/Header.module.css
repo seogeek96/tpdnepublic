@@ -103,8 +103,6 @@
     gap: 5px;
   }
   .dropdownContent {
-    width: 90%; /* Slightly smaller than full width */
-    max-width: 400px; /* Prevents too much stretch */
     background-color: black; /* Proper dark background */
     grid-template-columns: repeat(3, 1fr); /* 3-column layout */
     gap: 8px;

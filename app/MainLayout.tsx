@@ -5,6 +5,7 @@ import Script from "next/script";
 import Head from "next/head"; // Import the Head component
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { applySiteDateYear } from "@/utils/site-date";
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -37,6 +38,7 @@ keywords:["यह आदमी मौजूद नहीं है - नकल�
 
   // Fallback to English if the language is not found
   const metadata = metadataByLang[lang] || metadataByLang.en;
+  const pageTitle = applySiteDateYear(metadata.title);
 
   // New canonical logic
   const canonicalUrl =
@@ -51,7 +53,7 @@ keywords:["यह आदमी मौजूद नहीं है - नकल�
         {/* Set the HTML lang attribute */}
         <html lang={lang} />
         {/* Set the document title */}
-        <title>{metadata.title}</title>
+        <title>{pageTitle}</title>
         {/* Set the meta keywords */}
         <meta name="keywords" content={metadata.keywords.join(", ")} />
         {/* Set the canonical URL */}

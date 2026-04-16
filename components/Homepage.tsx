@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import styles from "../styles/Homepage.module.css";
 import { translations } from "../utils/translations";
 import Image from "next/image";
+import { applySiteDateYear, SITE_DATE } from "@/utils/site-date";
 
 type GeneratedImage = {
   id: string;
@@ -59,6 +60,7 @@ const HomePage: React.FC<HomePageProps> = ({
   const [selectedGender, setSelectedGender] = useState("male");
   const [failedImageKeys, setFailedImageKeys] = useState<Record<string, true>>({});
   const content = translations[language] || translations.en;
+  const heading = applySiteDateYear(content.heading);
   const reloadImagesText = reloadImageLabels[language] || reloadImageLabels.en;
 
   useEffect(() => {
@@ -81,8 +83,8 @@ const HomePage: React.FC<HomePageProps> = ({
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.heading}>{content.heading}</h1>
-      <p className={styles.paragraph}>{content.updatedOn}: March 1st, 2025</p>
+      <h1 className={styles.heading}>{heading}</h1>
+      <p className={styles.paragraph}>{content.updatedOn}: {SITE_DATE}</p>
       <p className={styles.paragraph}>{content.description}</p>
 
       {isClient && language === 'en' && (

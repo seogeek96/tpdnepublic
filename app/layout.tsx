@@ -4,9 +4,61 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import MainLayout from "./MainLayout";
 import Script from "next/script";
+import { applySiteDateYear, SITE_DATE } from "@/utils/site-date";
 
 // Initialize the Inter font
 const inter = Inter({ subsets: ["latin"], display: "swap" });
+
+const languageMap: { [key: string]: string } = {
+  ae: "ar",
+  br: "pt",
+  cn: "zh",
+  gr: "el",
+  jp: "ja",
+  kr: "ko",
+  si: "sl",
+  ua: "uk",
+};
+
+const supportedLanguages = new Set([
+  "en",
+  "es",
+  "ar",
+  "bg",
+  "ru",
+  "it",
+  "fr",
+  "tr",
+  "ro",
+  "zh",
+  "sv",
+  "uk",
+  "el",
+  "id",
+  "no",
+  "ja",
+  "nl",
+  "sl",
+  "et",
+  "pl",
+  "ko",
+  "de",
+  "fi",
+  "pt",
+  "hi",
+]);
+
+const getLanguageFromSegment = (segment?: string) => {
+  const mappedLanguage = segment ? languageMap[segment] || segment : "en";
+  return supportedLanguages.has(mappedLanguage) ? mappedLanguage : "en";
+};
+
+const stripLanguageSegment = (segments: string[]) => {
+  const [firstSegment, ...remainingSegments] = segments;
+  const mappedLanguage = firstSegment ? languageMap[firstSegment] || firstSegment : "";
+
+  return supportedLanguages.has(mappedLanguage) ? remainingSegments : segments;
+};
 
 // Define metadata for each language
 const metadataByLang: { [key: string]: { title: string; description: string; keywords: string; } } = {
@@ -166,6 +218,11 @@ const pageMetadata: { [key: string]: { title: string; description: string; keywo
     description: "Contact this person does not exist. Contact us using the form below or via email on this page given below.",
     keywords: "Contact us, This person does not exist contact, AI face generator contact",
   },
+  "/contact": {
+    title: "Contact Us - This Person Does Not Exist",
+    description: "Contact this person does not exist. Contact us using the form below or via email on this page given below.",
+    keywords: "Contact us, This person does not exist contact, AI face generator contact",
+  },
   "/privacy-policy": {
     title: "Privacy Policy - This Person Does Not Exist",
     description: "Read our privacy policy to understand how we handle your data.",
@@ -173,9 +230,18 @@ const pageMetadata: { [key: string]: { title: string; description: string; keywo
   },
   "/algorithm": {
     title: "AI Face Generation Algorithm | StyleGAN/StyleGAN2 Explained | This Person Does Not Exist",
-    description: "Explore NVIDIA's StyleGAN and StyleGAN2 algorithms powering our AI-generated human faces. Technical details on convolutional networks, noise injection, and public dataset availability. Updated January 2025.",
+    description: `Explore NVIDIA's StyleGAN and StyleGAN2 algorithms powering our AI-generated human faces. Technical details on convolutional networks, noise injection, and public dataset availability. Updated ${SITE_DATE}.`,
     keywords: "AI face generation algorithm, StyleGAN, StyleGAN2, This person does not exist algorithm",
   },
+};
+
+const resolveMetadataDates = (metadata: { title: string; description: string; keywords: string }) => {
+  return {
+    ...metadata,
+    title: applySiteDateYear(metadata.title),
+    description: applySiteDateYear(metadata.description),
+    keywords: applySiteDateYear(metadata.keywords),
+  };
 };
 
 // Function to generate JSON-LD structured data with pretty-printing
@@ -235,33 +301,20 @@ const generateSchema = (pagePath: string, metadata: { title: string; description
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-
-  // Extract the language from the URL
-  const languageSegment = pathname.split("/")[1] || "en";
-
-  // Map legacy language codes to new ones
-  const languageMap: { [key: string]: string } = {
-    ae: "ar",
-    br: "pt",
-    cn: "zh",
-    gr: "el",
-    jp: "ja",
-    kr: "ko",
-    si: "sl",
-    ua: "uk",
-  };
+  const pathSegments = pathname.split("/").filter(Boolean);
 
   // Get the selected language
-  const selectedLanguage = languageMap[languageSegment] || languageSegment || "en";
+  const selectedLanguage = getLanguageFromSegment(pathSegments[0]);
 
   // Get metadata for the selected language
-  const metadata = metadataByLang[selectedLanguage] || metadataByLang.en;
+  const metadata = resolveMetadataDates(metadataByLang[selectedLanguage] || metadataByLang.en);
 
-  // Construct the full path for the current page (e.g., /en/contact-us)
-  const pagePath = `/${selectedLanguage}${pathname.split("/").slice(2).join("/")}`;
+  const pageSegments = stripLanguageSegment(pathSegments);
+  const pagePath = pageSegments.length ? `/${pageSegments.join("/")}` : "/";
 
   // Check if the current path matches a specific page
-  const pageMeta = pageMetadata[pagePath];
+  const rawPageMeta = pageMetadata[pagePath];
+  const pageMeta = rawPageMeta ? resolveMetadataDates(rawPageMeta) : undefined;
 
   // Generate JSON-LD structured data
   const schemaData = generateSchema(pagePath, pageMeta || metadata);

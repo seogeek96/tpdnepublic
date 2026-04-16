@@ -41,6 +41,9 @@ const Header: React.FC<HeaderProps> = ({ selectedLanguage }) => {
     { code: "hi", name: "Hindi", flag: "in" },
     { code: "en", name: "English", flag: "gb" },
   ];
+  const activeLanguage = languages.find((language) => language.code === selectedLanguage) ||
+    languages.find((language) => language.code === "en") ||
+    languages[0];
 
   // Updated to handle href generation and remove trailing slashes
   const getLocalizedPath = (currentPath: string, newLang: string) => {
@@ -82,12 +85,10 @@ const Header: React.FC<HeaderProps> = ({ selectedLanguage }) => {
           aria-expanded={showDropdown}
         >
           <span
-            className={`fi fi-${
-              languages.find((l) => l.code === selectedLanguage)?.flag
-            }`}
+            className={`fi fi-${activeLanguage.flag}`}
           />
           <span className={styles.languageName}>
-            {languages.find((l) => l.code === selectedLanguage)?.name}
+            {activeLanguage.name}
           </span>
         </button>
 
