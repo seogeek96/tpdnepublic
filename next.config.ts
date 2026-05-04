@@ -14,6 +14,7 @@ const nextConfig = {
       { source: '/ae/:path*', destination: '/ar/:path*', permanent: true },
       { source: '/contact-us', destination: '/contact', permanent: true },
       { source: '/en', destination: '/', permanent: true },
+      { source: '/\u2060', destination: '/', permanent: true },
       // Catch-all redirect for invalid routes (redirect to homepage)
     ];
   },

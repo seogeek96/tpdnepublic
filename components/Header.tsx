@@ -13,6 +13,12 @@ const Header: React.FC<HeaderProps> = ({ selectedLanguage }) => {
   const router = useRouter();
   const pathname = usePathname();
   const [showDropdown, setShowDropdown] = useState(false);
+  const staticHomeFallbackPaths = new Set([
+    "algorithm",
+    "contact",
+    "contact-us",
+    "privacy-policy",
+  ]);
 
   const languages = [
     { code: "bg", name: "български", flag: "bg" },
@@ -52,6 +58,10 @@ const Header: React.FC<HeaderProps> = ({ selectedLanguage }) => {
     // Remove existing language prefix if it exists
     if (languages.some((lang) => lang.code === pathSegments[0])) {
       pathSegments.shift();
+    }
+
+    if (pathSegments.length === 1 && staticHomeFallbackPaths.has(pathSegments[0])) {
+      return newLang === "en" ? "/" : `/${newLang}`;
     }
 
     // English uses root path, others use language prefix

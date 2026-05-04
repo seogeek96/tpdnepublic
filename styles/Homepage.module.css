@@ -27,30 +27,6 @@
   overflow: hidden;
 }
 
-/* Border box */
-.borderBox {
-  border: 2px solid rgb(243, 228, 20) ; /* Yellow border */
-  padding: 10px; /* Add some padding inside the box */
-  text-align: center; /* Center the text */
-  margin-bottom: 20px; /* Add some space below the box */
-  font-family: Arial, sans-serif; /* Match the font */
-  font-size: large; /* Adjust the font size */
-  color: white; /* Text color */
-  background-color: rgba(247, 231, 9, 0.1); /* Slight background color */
-  border-radius: 5px; /* Rounded corners */
-}
-
-.borderBox a {
-  color: #f7e709; /* Yellow color */
-  text-decoration: underline; /* Underline the link */
-  font-size: large;
-}
-
-.borderBox a:hover {
-  color: #fff; /* Change color on hover */
-  text-decoration: none; /* Remove underline on hover */
-}
-
 @keyframes shimmer {
   0% {
       background-position: 120% 0;

@@ -40,6 +40,10 @@ const reloadImageLabels: Record<string, string> = {
   zh: "重新加载图片",
 };
 
+const leadParagraphs: Record<string, string> = {
+  en: "Get AI fake face image of man, women and child from this person does not exist. One click to download random human face.",
+};
+
 interface HomePageProps {
   language: string;
   images: GeneratedImage[];
@@ -56,16 +60,12 @@ const HomePage: React.FC<HomePageProps> = ({
   setGender,
   fetchRandomImage,
 }) => {
-  const [isClient, setIsClient] = useState(false);
   const [selectedGender, setSelectedGender] = useState("male");
   const [failedImageKeys, setFailedImageKeys] = useState<Record<string, true>>({});
   const content = translations[language] || translations.en;
   const heading = applySiteDateYear(content.heading);
   const reloadImagesText = reloadImageLabels[language] || reloadImageLabels.en;
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  const leadParagraph = leadParagraphs[language];
 
   useEffect(() => {
     setFailedImageKeys({});
@@ -85,29 +85,7 @@ const HomePage: React.FC<HomePageProps> = ({
     <div className={styles.container}>
       <h1 className={styles.heading}>{heading}</h1>
       <p className={styles.paragraph}>{content.updatedOn}: {SITE_DATE}</p>
-      <p className={styles.paragraph}>{content.description}</p>
-
-      {isClient && language === 'en' && (
-        <div className={styles.borderBox}>
-          Please join <a
-            href="https://www.reddit.com/r/thispersondonotexist/"
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            className={styles.link}
-          >
-            r/thispersondoesnotexist
-          </a>{" "}
-          and if you found it useful, upvote us on this{" "}
-          <a
-            href="https://www.reddit.com/r/thispersondonotexist/comments/1j29klx/the_best_ai_face_generator/"
-            target="_blank"
-            rel="noopener noreferrer nofollow"
-            className={styles.link}
-          >
-            Reddit post.
-          </a>{" "}
-        </div>
-      )}
+      {leadParagraph && <p className={styles.paragraph}>{leadParagraph}</p>}
 
       <div className={styles.buttons}>
         <button className={styles.btn} onClick={() => handleGenderChange("male")}>
@@ -173,6 +151,7 @@ const HomePage: React.FC<HomePageProps> = ({
         )}
       </div>
 
+      <p className={styles.paragraph}>{content.description}</p>
       <div className={styles.content}>{content.content}</div>
     </div>
   );
